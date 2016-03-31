@@ -1,0 +1,1 @@
+include ':app', ':jj_android_service', ':jj_android_ui', ':jj_android_common'
