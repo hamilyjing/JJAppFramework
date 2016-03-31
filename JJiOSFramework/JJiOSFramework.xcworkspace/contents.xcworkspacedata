@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:JJiOSFrameworkApp.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:JJ_iOS_UI/JJ_iOS_UI.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:JJ_iOS_Service/JJ_iOS_Service.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:JJ_iOS_Common/JJ_iOS_Common.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:JJiOSFrameworkApp.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+</Workspace>

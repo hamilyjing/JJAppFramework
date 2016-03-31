@@ -1,0 +1,488 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		28BB33AE1C86CB5C00183DE3 /* JJFeatureSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BB33881C86CB5C00183DE3 /* JJFeatureSet.m */; };
+		28BB33AF1C86CB5C00183DE3 /* JJServiceNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BB338A1C86CB5C00183DE3 /* JJServiceNotification.m */; };
+		28BB33B01C86CB5C00183DE3 /* JJService.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BB338C1C86CB5C00183DE3 /* JJService.m */; };
+		28BB33B11C86CB5C00183DE3 /* JJServiceBatchRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BB338D1C86CB5C00183DE3 /* JJServiceBatchRequest.m */; };
+		28BB33B21C86CB5C00183DE3 /* JJServiceChainRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BB338E1C86CB5C00183DE3 /* JJServiceChainRequest.m */; };
+		28BB33B31C86CB5C00183DE3 /* JJServiceFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BB338F1C86CB5C00183DE3 /* JJServiceFactory.m */; };
+		28BB33B41C86CB5C00183DE3 /* JJNSArrayHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BB33931C86CB5C00183DE3 /* JJNSArrayHelper.m */; };
+		28BB33B51C86CB5C00183DE3 /* JJNSDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BB33951C86CB5C00183DE3 /* JJNSDataHelper.m */; };
+		28BB33B61C86CB5C00183DE3 /* JJNSDictionaryHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BB33971C86CB5C00183DE3 /* JJNSDictionaryHelper.m */; };
+		28BB33B71C86CB5C00183DE3 /* JJNSFileManagerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BB33991C86CB5C00183DE3 /* JJNSFileManagerHelper.m */; };
+		28BB33B81C86CB5C00183DE3 /* JJNSMutableArrayHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BB339B1C86CB5C00183DE3 /* JJNSMutableArrayHelper.m */; };
+		28BB33B91C86CB5C00183DE3 /* JJNSMutableDictionaryHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BB339D1C86CB5C00183DE3 /* JJNSMutableDictionaryHelper.m */; };
+		28BB33BA1C86CB5C00183DE3 /* JJNSStringHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BB339F1C86CB5C00183DE3 /* JJNSStringHelper.m */; };
+		28BB33BB1C86CB5C00183DE3 /* JJUIDeviceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BB33A11C86CB5C00183DE3 /* JJUIDeviceHelper.m */; };
+		28BB33BC1C86CB5C00183DE3 /* JJLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BB33A41C86CB5C00183DE3 /* JJLocationManager.m */; };
+		28BB33BE1C86CB5C00183DE3 /* JJModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BB33A71C86CB5C00183DE3 /* JJModel.m */; };
+		28BB33BF1C86CB5C00183DE3 /* JJBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BB33AA1C86CB5C00183DE3 /* JJBaseRequest.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		28BB330F1C86B42100183DE3 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		28BB33111C86B42100183DE3 /* libJJ_iOS_Service.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libJJ_iOS_Service.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		28BB33761C86CB5C00183DE3 /* JJServiceNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJServiceNotification.h; sourceTree = "<group>"; };
+		28BB33781C86CB5C00183DE3 /* JJService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJService.h; sourceTree = "<group>"; };
+		28BB33791C86CB5C00183DE3 /* JJServiceBatchRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJServiceBatchRequest.h; sourceTree = "<group>"; };
+		28BB337A1C86CB5C00183DE3 /* JJServiceChainRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJServiceChainRequest.h; sourceTree = "<group>"; };
+		28BB337B1C86CB5C00183DE3 /* JJServiceFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJServiceFactory.h; sourceTree = "<group>"; };
+		28BB337E1C86CB5C00183DE3 /* JJLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJLog.h; sourceTree = "<group>"; };
+		28BB33811C86CB5C00183DE3 /* JJModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJModel.h; sourceTree = "<group>"; };
+		28BB33871C86CB5C00183DE3 /* JJFeatureSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJFeatureSet.h; sourceTree = "<group>"; };
+		28BB33881C86CB5C00183DE3 /* JJFeatureSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJFeatureSet.m; sourceTree = "<group>"; };
+		28BB338A1C86CB5C00183DE3 /* JJServiceNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJServiceNotification.m; sourceTree = "<group>"; };
+		28BB338C1C86CB5C00183DE3 /* JJService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJService.m; sourceTree = "<group>"; };
+		28BB338D1C86CB5C00183DE3 /* JJServiceBatchRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJServiceBatchRequest.m; sourceTree = "<group>"; };
+		28BB338E1C86CB5C00183DE3 /* JJServiceChainRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJServiceChainRequest.m; sourceTree = "<group>"; };
+		28BB338F1C86CB5C00183DE3 /* JJServiceFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJServiceFactory.m; sourceTree = "<group>"; };
+		28BB33921C86CB5C00183DE3 /* JJNSArrayHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJNSArrayHelper.h; sourceTree = "<group>"; };
+		28BB33931C86CB5C00183DE3 /* JJNSArrayHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJNSArrayHelper.m; sourceTree = "<group>"; };
+		28BB33941C86CB5C00183DE3 /* JJNSDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJNSDataHelper.h; sourceTree = "<group>"; };
+		28BB33951C86CB5C00183DE3 /* JJNSDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJNSDataHelper.m; sourceTree = "<group>"; };
+		28BB33961C86CB5C00183DE3 /* JJNSDictionaryHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJNSDictionaryHelper.h; sourceTree = "<group>"; };
+		28BB33971C86CB5C00183DE3 /* JJNSDictionaryHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJNSDictionaryHelper.m; sourceTree = "<group>"; };
+		28BB33981C86CB5C00183DE3 /* JJNSFileManagerHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJNSFileManagerHelper.h; sourceTree = "<group>"; };
+		28BB33991C86CB5C00183DE3 /* JJNSFileManagerHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJNSFileManagerHelper.m; sourceTree = "<group>"; };
+		28BB339A1C86CB5C00183DE3 /* JJNSMutableArrayHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJNSMutableArrayHelper.h; sourceTree = "<group>"; };
+		28BB339B1C86CB5C00183DE3 /* JJNSMutableArrayHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJNSMutableArrayHelper.m; sourceTree = "<group>"; };
+		28BB339C1C86CB5C00183DE3 /* JJNSMutableDictionaryHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJNSMutableDictionaryHelper.h; sourceTree = "<group>"; };
+		28BB339D1C86CB5C00183DE3 /* JJNSMutableDictionaryHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJNSMutableDictionaryHelper.m; sourceTree = "<group>"; };
+		28BB339E1C86CB5C00183DE3 /* JJNSStringHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJNSStringHelper.h; sourceTree = "<group>"; };
+		28BB339F1C86CB5C00183DE3 /* JJNSStringHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJNSStringHelper.m; sourceTree = "<group>"; };
+		28BB33A01C86CB5C00183DE3 /* JJUIDeviceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJUIDeviceHelper.h; sourceTree = "<group>"; };
+		28BB33A11C86CB5C00183DE3 /* JJUIDeviceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJUIDeviceHelper.m; sourceTree = "<group>"; };
+		28BB33A31C86CB5C00183DE3 /* JJLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJLocationManager.h; sourceTree = "<group>"; };
+		28BB33A41C86CB5C00183DE3 /* JJLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJLocationManager.m; sourceTree = "<group>"; };
+		28BB33A71C86CB5C00183DE3 /* JJModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJModel.m; sourceTree = "<group>"; };
+		28BB33A91C86CB5C00183DE3 /* JJBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJBaseRequest.h; sourceTree = "<group>"; };
+		28BB33AA1C86CB5C00183DE3 /* JJBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJBaseRequest.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		28BB330E1C86B42100183DE3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		28BB33081C86B42100183DE3 = {
+			isa = PBXGroup;
+			children = (
+				28BB33131C86B42100183DE3 /* JJ_iOS_Service */,
+				28BB33121C86B42100183DE3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		28BB33121C86B42100183DE3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				28BB33111C86B42100183DE3 /* libJJ_iOS_Service.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		28BB33131C86B42100183DE3 /* JJ_iOS_Service */ = {
+			isa = PBXGroup;
+			children = (
+				28BB33731C86CB5C00183DE3 /* Include */,
+				28BB33821C86CB5C00183DE3 /* Src */,
+				28BB33901C86CB5C00183DE3 /* Tool */,
+			);
+			path = JJ_iOS_Service;
+			sourceTree = "<group>";
+		};
+		28BB33731C86CB5C00183DE3 /* Include */ = {
+			isa = PBXGroup;
+			children = (
+				28BB33741C86CB5C00183DE3 /* ServiceFactory */,
+				28BB337C1C86CB5C00183DE3 /* Tool */,
+			);
+			path = Include;
+			sourceTree = "<group>";
+		};
+		28BB33741C86CB5C00183DE3 /* ServiceFactory */ = {
+			isa = PBXGroup;
+			children = (
+				28BB33751C86CB5C00183DE3 /* Notification */,
+				28BB33771C86CB5C00183DE3 /* Service */,
+				28BB337B1C86CB5C00183DE3 /* JJServiceFactory.h */,
+			);
+			path = ServiceFactory;
+			sourceTree = "<group>";
+		};
+		28BB33751C86CB5C00183DE3 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				28BB33761C86CB5C00183DE3 /* JJServiceNotification.h */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		28BB33771C86CB5C00183DE3 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				28BB33781C86CB5C00183DE3 /* JJService.h */,
+				28BB33791C86CB5C00183DE3 /* JJServiceBatchRequest.h */,
+				28BB337A1C86CB5C00183DE3 /* JJServiceChainRequest.h */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		28BB337C1C86CB5C00183DE3 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				28BB337D1C86CB5C00183DE3 /* Log */,
+				28BB337F1C86CB5C00183DE3 /* Model */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		28BB337D1C86CB5C00183DE3 /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				28BB337E1C86CB5C00183DE3 /* JJLog.h */,
+			);
+			path = Log;
+			sourceTree = "<group>";
+		};
+		28BB337F1C86CB5C00183DE3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				28BB33811C86CB5C00183DE3 /* JJModel.h */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		28BB33821C86CB5C00183DE3 /* Src */ = {
+			isa = PBXGroup;
+			children = (
+				28BB33831C86CB5C00183DE3 /* ServiceFactory */,
+			);
+			path = Src;
+			sourceTree = "<group>";
+		};
+		28BB33831C86CB5C00183DE3 /* ServiceFactory */ = {
+			isa = PBXGroup;
+			children = (
+				28BB33841C86CB5C00183DE3 /* FeatureSet */,
+				28BB33891C86CB5C00183DE3 /* Notification */,
+				28BB338B1C86CB5C00183DE3 /* Service */,
+				28BB338F1C86CB5C00183DE3 /* JJServiceFactory.m */,
+			);
+			path = ServiceFactory;
+			sourceTree = "<group>";
+		};
+		28BB33841C86CB5C00183DE3 /* FeatureSet */ = {
+			isa = PBXGroup;
+			children = (
+				28BB33871C86CB5C00183DE3 /* JJFeatureSet.h */,
+				28BB33881C86CB5C00183DE3 /* JJFeatureSet.m */,
+			);
+			path = FeatureSet;
+			sourceTree = "<group>";
+		};
+		28BB33891C86CB5C00183DE3 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				28BB338A1C86CB5C00183DE3 /* JJServiceNotification.m */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		28BB338B1C86CB5C00183DE3 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				28BB338C1C86CB5C00183DE3 /* JJService.m */,
+				28BB338D1C86CB5C00183DE3 /* JJServiceBatchRequest.m */,
+				28BB338E1C86CB5C00183DE3 /* JJServiceChainRequest.m */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		28BB33901C86CB5C00183DE3 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				28BB33911C86CB5C00183DE3 /* Helper */,
+				28BB33A21C86CB5C00183DE3 /* Location */,
+				28BB33A51C86CB5C00183DE3 /* Model */,
+				28BB33A81C86CB5C00183DE3 /* Network */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		28BB33911C86CB5C00183DE3 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				28BB33921C86CB5C00183DE3 /* JJNSArrayHelper.h */,
+				28BB33931C86CB5C00183DE3 /* JJNSArrayHelper.m */,
+				28BB33941C86CB5C00183DE3 /* JJNSDataHelper.h */,
+				28BB33951C86CB5C00183DE3 /* JJNSDataHelper.m */,
+				28BB33961C86CB5C00183DE3 /* JJNSDictionaryHelper.h */,
+				28BB33971C86CB5C00183DE3 /* JJNSDictionaryHelper.m */,
+				28BB33981C86CB5C00183DE3 /* JJNSFileManagerHelper.h */,
+				28BB33991C86CB5C00183DE3 /* JJNSFileManagerHelper.m */,
+				28BB339A1C86CB5C00183DE3 /* JJNSMutableArrayHelper.h */,
+				28BB339B1C86CB5C00183DE3 /* JJNSMutableArrayHelper.m */,
+				28BB339C1C86CB5C00183DE3 /* JJNSMutableDictionaryHelper.h */,
+				28BB339D1C86CB5C00183DE3 /* JJNSMutableDictionaryHelper.m */,
+				28BB339E1C86CB5C00183DE3 /* JJNSStringHelper.h */,
+				28BB339F1C86CB5C00183DE3 /* JJNSStringHelper.m */,
+				28BB33A01C86CB5C00183DE3 /* JJUIDeviceHelper.h */,
+				28BB33A11C86CB5C00183DE3 /* JJUIDeviceHelper.m */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		28BB33A21C86CB5C00183DE3 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				28BB33A31C86CB5C00183DE3 /* JJLocationManager.h */,
+				28BB33A41C86CB5C00183DE3 /* JJLocationManager.m */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		28BB33A51C86CB5C00183DE3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				28BB33A71C86CB5C00183DE3 /* JJModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		28BB33A81C86CB5C00183DE3 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				28BB33A91C86CB5C00183DE3 /* JJBaseRequest.h */,
+				28BB33AA1C86CB5C00183DE3 /* JJBaseRequest.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		28BB33101C86B42100183DE3 /* JJ_iOS_Service */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28BB331A1C86B42100183DE3 /* Build configuration list for PBXNativeTarget "JJ_iOS_Service" */;
+			buildPhases = (
+				28BB330D1C86B42100183DE3 /* Sources */,
+				28BB330E1C86B42100183DE3 /* Frameworks */,
+				28BB330F1C86B42100183DE3 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JJ_iOS_Service;
+			productName = JJ_iOS_Service;
+			productReference = 28BB33111C86B42100183DE3 /* libJJ_iOS_Service.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		28BB33091C86B42100183DE3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = JJ;
+				TargetAttributes = {
+					28BB33101C86B42100183DE3 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 28BB330C1C86B42100183DE3 /* Build configuration list for PBXProject "JJ_iOS_Service" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 28BB33081C86B42100183DE3;
+			productRefGroup = 28BB33121C86B42100183DE3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				28BB33101C86B42100183DE3 /* JJ_iOS_Service */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		28BB330D1C86B42100183DE3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28BB33B21C86CB5C00183DE3 /* JJServiceChainRequest.m in Sources */,
+				28BB33B61C86CB5C00183DE3 /* JJNSDictionaryHelper.m in Sources */,
+				28BB33BA1C86CB5C00183DE3 /* JJNSStringHelper.m in Sources */,
+				28BB33AE1C86CB5C00183DE3 /* JJFeatureSet.m in Sources */,
+				28BB33B11C86CB5C00183DE3 /* JJServiceBatchRequest.m in Sources */,
+				28BB33B71C86CB5C00183DE3 /* JJNSFileManagerHelper.m in Sources */,
+				28BB33BB1C86CB5C00183DE3 /* JJUIDeviceHelper.m in Sources */,
+				28BB33B41C86CB5C00183DE3 /* JJNSArrayHelper.m in Sources */,
+				28BB33B51C86CB5C00183DE3 /* JJNSDataHelper.m in Sources */,
+				28BB33BC1C86CB5C00183DE3 /* JJLocationManager.m in Sources */,
+				28BB33BE1C86CB5C00183DE3 /* JJModel.m in Sources */,
+				28BB33BF1C86CB5C00183DE3 /* JJBaseRequest.m in Sources */,
+				28BB33AF1C86CB5C00183DE3 /* JJServiceNotification.m in Sources */,
+				28BB33B81C86CB5C00183DE3 /* JJNSMutableArrayHelper.m in Sources */,
+				28BB33B91C86CB5C00183DE3 /* JJNSMutableDictionaryHelper.m in Sources */,
+				28BB33B01C86CB5C00183DE3 /* JJService.m in Sources */,
+				28BB33B31C86CB5C00183DE3 /* JJServiceFactory.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		28BB33181C86B42100183DE3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		28BB33191C86B42100183DE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		28BB331B1C86B42100183DE3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = "../Pods/Headers/Public/**";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		28BB331C1C86B42100183DE3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				HEADER_SEARCH_PATHS = "../Pods/Headers/Public/**";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		28BB330C1C86B42100183DE3 /* Build configuration list for PBXProject "JJ_iOS_Service" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28BB33181C86B42100183DE3 /* Debug */,
+				28BB33191C86B42100183DE3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		28BB331A1C86B42100183DE3 /* Build configuration list for PBXNativeTarget "JJ_iOS_Service" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28BB331B1C86B42100183DE3 /* Debug */,
+				28BB331C1C86B42100183DE3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 28BB33091C86B42100183DE3 /* Project object */;
+}
