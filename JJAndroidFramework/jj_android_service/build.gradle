@@ -21,5 +21,8 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
+    compile files('libs/android-async-http-1.4.8.jar')
+    compile files('libs/org.apache.http.legacy.jar')
+    compile files('libs/fastjson-1.2.7.jar')
     compile 'com.android.support:appcompat-v7:23.2.1'
 }

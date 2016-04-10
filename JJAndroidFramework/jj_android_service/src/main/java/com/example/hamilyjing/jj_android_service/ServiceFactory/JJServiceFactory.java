@@ -75,7 +75,8 @@ public class JJServiceFactory
 
             if (service.needUnloading())
             {
-                serviceHashMap.remove(className);
+                iterator.remove();
+                //serviceHashMap.remove(className);
             }
         }
     }
