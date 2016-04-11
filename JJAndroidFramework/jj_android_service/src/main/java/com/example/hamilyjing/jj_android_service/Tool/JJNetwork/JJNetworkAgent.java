@@ -17,7 +17,7 @@ public class JJNetworkAgent {
     private AsyncHttpClient client = new AsyncHttpClient();
 
     private HashMap<Integer, JJBaseRequest> requestHashMap = new HashMap<>();
-    private Integer index = 1;
+    private Integer requestIndex = 1;
 
     public static JJNetworkAgent getInstance()
     {
@@ -39,7 +39,6 @@ public class JJNetworkAgent {
         url = "http://apis.baidu.com/showapi_open_bus/weather_showapi/areaid";
 
         JJTextHttpResponseHandler textHttpResponseHandler = new JJTextHttpResponseHandler();
-        textHttpResponseHandler.request = request;
 
         switch (method)
         {
@@ -81,16 +80,18 @@ public class JJNetworkAgent {
 
             default:
             {
+                return;
             }
-            break;
         }
 
-        addOperation(request);
+        Integer index = addOperation(request);
+        textHttpResponseHandler.requestIndex = index;
+        request.requestIndex = index;
     }
 
     public void cancelRequest(JJBaseRequest request)
     {
-        removeOperation(request);
+        removeOperation(request.requestIndex);
     }
 
     public void cancelAllRequest()
@@ -101,7 +102,7 @@ public class JJNetworkAgent {
         }
     }
 
-    public String buildRequestUrl(JJBaseRequest request)
+    private String buildRequestUrl(JJBaseRequest request)
     {
         String detailUrl = request.requestUrl();
         if (detailUrl.startsWith("http"))
@@ -123,43 +124,54 @@ public class JJNetworkAgent {
         return url;
     }
 
-    private void addOperation(JJBaseRequest request)
+    private Integer addOperation(JJBaseRequest request)
     {
+        Integer index;
+
         synchronized(this)
         {
-            requestHashMap.put(index, request);
-            request.index = index;
-            index = index + 1;
+            requestHashMap.put(requestIndex, request);
+            index = requestIndex;
+            requestIndex = requestIndex + 1;
         }
+
+        return index;
     }
 
-    private void removeOperation(JJBaseRequest request)
+    private JJBaseRequest removeOperation(Integer index)
     {
+        JJBaseRequest request;
         synchronized(this)
         {
-            requestHashMap.remove(request.index);
+            request = requestHashMap.remove(index);
         }
+
+        return request;
     }
 
-    public void onSuccess(JJBaseRequest request, int i, Header[] headers, String s)
+    public void onSuccess(Integer index, int i, Header[] headers, String s)
     {
-        JJBaseRequest baseRequest = requestHashMap.get(request.index);
-        if (null == baseRequest)
+        JJBaseRequest request = removeOperation(index);
+        if (null == request)
         {
             return;
         }
 
-        removeOperation(baseRequest);
+        request.responseString = s;
+        request.requestCompleteFilter();
+        request.callBack.onSuccess(request);
     }
 
-    public void onFailure(JJBaseRequest request, int i, Header[] headers, String s, Throwable throwable)
+    public void onFailure(Integer index, int i, Header[] headers, String s, Throwable throwable)
     {
-        JJBaseRequest baseRequest = requestHashMap.get(request.index);
-        if (null == baseRequest)
+        JJBaseRequest request = removeOperation(index);
+        if (null == request)
         {
             return;
         }
 
-        removeOperation(request);
+        request.responseString = s;
+        request.requestFailedFilter();
+        request.callBack.onFailure(request);
     }
 }

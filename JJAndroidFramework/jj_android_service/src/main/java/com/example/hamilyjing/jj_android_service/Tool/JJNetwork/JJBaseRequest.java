@@ -17,9 +17,13 @@ public class JJBaseRequest {
 
     public JJRequestMethod requestMethod = JJRequestMethod.JJRequestMethodGet;
 
-    public Integer timeoutInterval = 10;
+    public Integer timeoutInterval = 60;
 
-    public Integer index;
+    public Integer requestIndex;
+
+    public IJJRequestCallBack callBack;
+
+    public String responseString;
 
     public JJBaseRequest()
     {
@@ -48,5 +52,29 @@ public class JJBaseRequest {
     public String requestArgument()
     {
         return "";
+    }
+
+    public void requestCompleteFilter()
+    {
+    }
+
+    public void requestFailedFilter()
+    {
+    }
+
+    public void start()
+    {
+        JJNetworkAgent.getInstance().addRequest(this);
+    }
+
+    public void startWithCallBack(IJJRequestCallBack callBack)
+    {
+        this.callBack = callBack;
+        start();
+    }
+
+    public void stop()
+    {
+        JJNetworkAgent.getInstance().cancelRequest(this);
     }
 }
