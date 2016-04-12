@@ -1,9 +1,221 @@
 package com.example.hamilyjing.jj_android_service.Tool.JJNetwork;
 
+import android.content.Context;
+import android.os.Environment;
+
+import com.alibaba.fastjson.JSON;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
 /**
  * Created by hamilyjing on 4/11/16.
  */
-public class JJRequest extends JJBaseRequest {
+public class JJRequest extends JJBaseRequest
+{
+    private Context context;
+
+    private boolean isSaveToMemory;
+    private boolean isSaveToDisk;
+
+    private Object cacheModel;
+    private Object oldModel;
+
+    private Class modelClass;
+
+    private IResponseOperation responseOperation;
+
+    private String userCacheDirectory;
+    private String sensitiveDataForSavedFileName;
+
+    @Override
+    public void requestCompleteFilter()
+    {
+        super.requestCompleteFilter();
+
+        if (!isSaveToMemory && !isSaveToDisk)
+        {
+            return;
+        }
+
+        setOldModel(getCacheModel());
+
+        Object model = currentResponseModel();
+
+        if (!successForBussiness(model))
+        {
+            return;
+        }
+
+        if (isSaveToMemory)
+        {
+            setCacheModel(model);
+        }
+
+        if (isSaveToDisk)
+        {
+            saveObjectToDisk(model);
+        }
+    }
+
+    /// operation
+
+    public Object currentResponseModel()
+    {
+        Object model = convertToModel(this.responseString);
+        model = operateWithNewObject(model, getOldModel());
+        return model;
+    }
+
+    public boolean successForBussiness(Object model)
+    {
+        return false;
+    }
+
+    public Object convertToModel(String responseString)
+    {
+        Object model = JSON.parseObject(responseString, modelClass);
+        return model;
+    }
+
+    public Object operateWithNewObject(Object newModel, Object oldModel)
+    {
+        if (responseOperation != null)
+        {
+            return responseOperation.operate(newModel, oldModel);
+        }
+
+        return newModel;
+    }
+
+    /// cache
+
+    public Object getCacheFromDisk()
+    {
+        Object model = null;
+        ObjectInputStream inputStream;
+
+        try
+        {
+            inputStream = new ObjectInputStream(new FileInputStream(new File(savedFilePath())));
+            model = inputStream.readObject();
+            inputStream.close();
+        }
+        catch (FileNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+        catch (ClassNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+
+        return model;
+    }
+
+    public void saveObjectToMemory(Object model)
+    {
+        setCacheModel(model);
+    }
+
+    public void saveObjectToDisk(Object model)
+    {
+        ObjectOutputStream outputStream;
+        try
+        {
+            outputStream = new ObjectOutputStream(new FileOutputStream(new File(savedFilePath())));
+            outputStream.writeObject(model);
+            outputStream.close();
+        }
+        catch (FileNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    public boolean haveDiskCache()
+    {
+        Object model = getCacheFromDisk();
+        return (model != null);
+    }
+
+    public void removeMemoryCache()
+    {
+        setCacheModel(null);
+    }
+
+    public void removeDiskCache()
+    {
+        File file = new File(savedFilePath());
+        if (file.isFile() && file.exists())
+        {
+            file.delete();
+        }
+    }
+
+    public void removeAllCache()
+    {
+        removeMemoryCache();
+        removeDiskCache();
+    }
+
+    /// disk file
+
+    public String savedFilePath()
+    {
+        String filePath = savedFileDirectory() + "/" + savedFileName();
+        return filePath;
+    }
+
+    public String savedFileDirectory()
+    {
+        String directory = null;
+
+        if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())
+                || !Environment.isExternalStorageRemovable())
+        {
+            directory = getContext().getExternalCacheDir().getPath();
+        }
+        else
+        {
+            directory = getContext().getCacheDir().getPath();
+        }
+
+        directory = directory + "/JJRequestCache";
+
+        if (getUserCacheDirectory() != null && getUserCacheDirectory().length() > 0)
+        {
+            directory = directory + "/" + getUserCacheDirectory();
+        }
+
+        File destDir = new File(directory);
+        if (!destDir.exists())
+        {
+            destDir.mkdirs();
+        }
+
+        return directory;
+    }
+
+    public String savedFileName()
+    {
+        return "";
+    }
+
+    /// get and set
 
     public boolean isSaveToMemory() {
         return isSaveToMemory;
@@ -12,8 +224,6 @@ public class JJRequest extends JJBaseRequest {
     public void setIsSaveToMemory(boolean isSaveToMemory) {
         this.isSaveToMemory = isSaveToMemory;
     }
-
-    public boolean isSaveToMemory;
 
     public boolean isSaveToDisk() {
         return isSaveToDisk;
@@ -39,14 +249,24 @@ public class JJRequest extends JJBaseRequest {
         this.modelClass = modelClass;
     }
 
-    public boolean isSaveToDisk;
+    public Object getCacheModel()
+    {
+        if (this.cacheModel != null)
+        {
+            Object model = this.cacheModel;
+            if (!isSaveToMemory())
+            {
+                setCacheModel(null);
+            }
+            return model;
+        }
 
-    private Object cacheModel;
-    public Object oldModel;
+        Object model = getCacheFromDisk();
+        if (isSaveToMemory())
+        {
+            setCacheModel(model);
+        }
 
-    public Class modelClass;
-
-    public Object getCacheModel() {
         return cacheModel;
     }
 
@@ -54,85 +274,35 @@ public class JJRequest extends JJBaseRequest {
         this.cacheModel = cacheModel;
     }
 
-    @Override
-    public void requestCompleteFilter() {
-        super.requestCompleteFilter();
-
-        if (!isSaveToMemory && !isSaveToDisk) {
-            return;
-        }
-
-        Object model = null;
-
-        if (!successForBussiness(model))
-        {
-            return;
-        }
-
-        if (isSaveToMemory)
-        {
-            setCacheModel(model);
-        }
-
-        if (isSaveToDisk)
-        {
-            saveObjectToDisk(model);
-        }
+    public IResponseOperation getResponseOperation() {
+        return responseOperation;
     }
 
-    private boolean successForBussiness(Object model)
-    {
-        return false;
+    public void setResponseOperation(IResponseOperation responseOperation) {
+        this.responseOperation = responseOperation;
     }
 
-    /// save cache
-
-    public void saveObjectToMemory(Object model)
-    {
-
+    public String getUserCacheDirectory() {
+        return userCacheDirectory;
     }
 
-    public void saveObjectToDisk(Object model)
-    {
-
+    public void setUserCacheDirectory(String userCacheDirectory) {
+        this.userCacheDirectory = userCacheDirectory;
     }
 
-    public boolean haveDiskCache()
-    {
-        return false;
+    public String getSensitiveDataForSavedFileName() {
+        return sensitiveDataForSavedFileName;
     }
 
-    /// remove cache
-
-    public void removeMemoryCache()
-    {
-
+    public void setSensitiveDataForSavedFileName(String sensitiveDataForSavedFileName) {
+        this.sensitiveDataForSavedFileName = sensitiveDataForSavedFileName;
     }
 
-    public void removeDiskCache()
-    {
-
+    public Context getContext() {
+        return context;
     }
 
-    public void removeAllCache()
-    {
-
-    }
-
-    /// disk file
-
-    public String savedFilePath()
-    {
-        return "";
-    }
-
-    public String savedFileDirectory()
-    {
-        return "";
-    }
-
-    public String savedFileName()
-    {
-        return "";
+    public void setContext(Context context) {
+        this.context = context;
     }
 }

@@ -1,6 +1,6 @@
 package com.example.hamilyjing.jj_android_service.ServiceFactory;
 
-import com.example.hamilyjing.jj_android_service.Tool.JJNetwork.JJBaseResponseModel;
+import com.example.hamilyjing.jj_android_service.Tool.Model.JJBaseResponseModel;
 
 /**
  * Created by hamilyjing on 4/11/16.
