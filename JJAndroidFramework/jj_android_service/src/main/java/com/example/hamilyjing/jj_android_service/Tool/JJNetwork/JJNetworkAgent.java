@@ -6,6 +6,7 @@ import com.loopj.android.http.RequestParams;
 import org.apache.http.*;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by hamilyjing on 4/9/16.
@@ -30,13 +31,16 @@ public class JJNetworkAgent {
 
     public void addRequest(JJBaseRequest request)
     {
-        JJBaseRequest.JJRequestMethod method = request.requestMethod;
+        JJBaseRequest.JJRequestMethod method = request.getRequestMethod();
         String url = buildRequestUrl(request);
+        Map<String, String> paramsMap = request.requestArgument();
         RequestParams params = null;
+        if (paramsMap != null)
+        {
+            params = new RequestParams(paramsMap);
+        }
 
-        client.setTimeout(request.timeoutInterval);
-
-        url = "http://apis.baidu.com/showapi_open_bus/weather_showapi/areaid";
+        //client.setTimeout(request.timeoutInterval);
 
         JJTextHttpResponseHandler textHttpResponseHandler = new JJTextHttpResponseHandler();
 
@@ -86,12 +90,12 @@ public class JJNetworkAgent {
 
         Integer index = addOperation(request);
         textHttpResponseHandler.requestIndex = index;
-        request.requestIndex = index;
+        request.setRequestIndex(index);
     }
 
     public void cancelRequest(JJBaseRequest request)
     {
-        removeOperation(request.requestIndex);
+        removeOperation(request.getRequestIndex());
     }
 
     public void cancelAllRequest()
@@ -157,9 +161,11 @@ public class JJNetworkAgent {
             return;
         }
 
-        request.responseString = s;
+        request.setIsNetworkResponseSuccess(true);
+        request.setResponseCode(200);
+        request.setResponseString(s);
         request.requestCompleteFilter();
-        request.callBack.onSuccess(request);
+        request.getRequestCallBack().onSuccess(request);
     }
 
     public void onFailure(Integer index, int i, Header[] headers, String s, Throwable throwable)
@@ -170,8 +176,10 @@ public class JJNetworkAgent {
             return;
         }
 
-        request.responseString = s;
+        request.setIsNetworkResponseSuccess(false);
+        request.setResponseCode(i);
+        request.setResponseString(s);
         request.requestFailedFilter();
-        request.callBack.onFailure(request);
+        request.getRequestCallBack().onFailure(request);
     }
 }

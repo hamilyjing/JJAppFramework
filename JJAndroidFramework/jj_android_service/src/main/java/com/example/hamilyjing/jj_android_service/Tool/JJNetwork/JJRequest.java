@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Environment;
 
 import com.alibaba.fastjson.JSON;
+import com.example.hamilyjing.jj_android_service.Tool.JJMD5;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -12,6 +13,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Created by hamilyjing on 4/11/16.
@@ -67,7 +71,7 @@ public class JJRequest extends JJBaseRequest
 
     public Object currentResponseModel()
     {
-        Object model = convertToModel(this.responseString);
+        Object model = convertToModel(this.getResponseString());
         model = operateWithNewObject(model, getOldModel());
         return model;
     }
@@ -182,17 +186,17 @@ public class JJRequest extends JJBaseRequest
 
     public String savedFileDirectory()
     {
-        String directory = null;
+        String directory = getContext().getFilesDir().getPath();
 
-        if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())
-                || !Environment.isExternalStorageRemovable())
-        {
-            directory = getContext().getExternalCacheDir().getPath();
-        }
-        else
-        {
-            directory = getContext().getCacheDir().getPath();
-        }
+//        if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())
+//                || !Environment.isExternalStorageRemovable())
+//        {
+//            directory = getContext().getExternalCacheDir().getPath();
+//        }
+//        else
+//        {
+//            directory = getContext().getCacheDir().getPath();
+//        }
 
         directory = directory + "/JJRequestCache";
 
@@ -212,7 +216,26 @@ public class JJRequest extends JJBaseRequest
 
     public String savedFileName()
     {
-        return "";
+        String baseUrl = baseUrl();
+        baseUrl = (baseUrl != null) ? baseUrl : "";
+
+        String requestUrl = requestUrl();
+        requestUrl = (requestUrl != null) ? baseUrl : "";
+
+        String argumentSting = "";
+        Map<String, String> argument = requestArgument();
+        Set<String> keyList = argument.keySet();
+        for (Iterator it = keyList.iterator(); it.hasNext();) {
+            String key = (String)it.next();
+            argumentSting += key + ":" + argument.get(key) + ",";
+        }
+
+        String sensitiveData = (this.sensitiveDataForSavedFileName != null) ? this.sensitiveDataForSavedFileName : "";
+
+        String fileName = baseUrl + requestUrl + argumentSting + sensitiveData;
+        fileName = JJMD5.md5(fileName);
+
+        return fileName;
     }
 
     /// get and set

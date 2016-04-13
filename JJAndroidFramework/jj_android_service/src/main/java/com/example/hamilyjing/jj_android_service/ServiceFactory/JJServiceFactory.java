@@ -32,7 +32,13 @@ public class JJServiceFactory
             return service;
         }
 
+        unloadUnneededService();
+
         service = ReflectUtil.objectFromClassName(serviceName);
+        if (null == service)
+        {
+            return null;
+        }
 
         service.serviceWillLoad();
         serviceHashMap.put(serviceName, service);
@@ -70,7 +76,7 @@ public class JJServiceFactory
         while (iterator.hasNext())
         {
             Map.Entry entry = (Map.Entry)iterator.next();
-            String className = (String)entry.getKey();
+            //String className = (String)entry.getKey();
             JJService service = (JJService)entry.getValue();
 
             if (service.needUnloading())
