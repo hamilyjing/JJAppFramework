@@ -5,6 +5,8 @@ import android.os.Environment;
 
 import com.alibaba.fastjson.JSON;
 import com.example.hamilyjing.jj_android_service.Tool.JJMD5;
+import com.example.hamilyjing.jj_android_service.Tool.Model.IResponseModel;
+import com.example.hamilyjing.jj_android_service.Tool.ReflectUtil;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -78,7 +80,14 @@ public class JJRequest extends JJBaseRequest
 
     public boolean successForBussiness(Object model)
     {
-        return false;
+        boolean successForBussiness = false;
+
+        if (ReflectUtil.isInterface(model.getClass(), "com.example.hamilyjing.jj_android_service.Tool.Model.IResponseModel"))
+        {
+            successForBussiness = ((IResponseModel)model).successForBussiness(model);
+        }
+
+        return successForBussiness;
     }
 
     public Object convertToModel(String responseString)
