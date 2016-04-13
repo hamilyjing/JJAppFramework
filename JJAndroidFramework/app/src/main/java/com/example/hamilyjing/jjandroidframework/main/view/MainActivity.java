@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
     private Button button;
     private TextView textView;
 
+    private Integer countIndex = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +37,8 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onNetworkRequestSuccess(Object model, String responseString, Object otherInfo) {
                         JJWeatherModel weatherModel = (JJWeatherModel)model;
-                        textView.setText(weatherModel.getErrMsg());
+                        textView.setText(weatherModel.getErrMsg() + "  " + countIndex);
+                        countIndex += 1;
                     }
 
                     @Override

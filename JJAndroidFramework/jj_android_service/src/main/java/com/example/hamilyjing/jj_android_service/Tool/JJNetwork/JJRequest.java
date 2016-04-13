@@ -1,11 +1,11 @@
 package com.example.hamilyjing.jj_android_service.Tool.JJNetwork;
 
-import android.content.Context;
-import android.os.Environment;
-
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.JSONArray;
 import com.example.hamilyjing.jj_android_service.Tool.JJMD5;
 import com.example.hamilyjing.jj_android_service.Tool.Model.IResponseModel;
+import com.example.hamilyjing.jj_android_service.Tool.Model.JJBaseResponseModel;
 import com.example.hamilyjing.jj_android_service.Tool.ReflectUtil;
 
 import java.io.File;
@@ -90,8 +90,39 @@ public class JJRequest extends JJBaseRequest
 
     public Object convertToModel(String responseString)
     {
-        Object model = JSON.parseObject(responseString, modelClass);
+        Object object = JSON.parse(responseString);
+        if (!(object instanceof com.alibaba.fastjson.JSONObject)) {
+            return null;
+        }
+
+        Object convertObject = getConvertString((JSONObject) object);
+        Object model;
+
+        if (convertObject instanceof com.alibaba.fastjson.JSONObject)
+        {
+            String convertString = ((JSONObject) convertObject).toJSONString();
+            model = JSON.parseObject(convertString, getModelClass());
+        }
+        else if (convertObject instanceof com.alibaba.fastjson.JSONArray)
+        {
+            model = ReflectUtil.objectFromClass(getModelClass());
+            ((JJBaseResponseModel)model).setJsonArray((JSONArray)convertObject);
+        }
+        else if (convertObject instanceof String)
+        {
+            model = ReflectUtil.objectFromClass(getModelClass());
+            ((JJBaseResponseModel)model).setResponseResultString((String)convertObject);
+        }
+        else
+        {
+            model = ReflectUtil.objectFromClass(getModelClass());
+        }
+
         return model;
+    }
+
+    public Object getConvertString(JSONObject jsonObject){
+        return jsonObject;
     }
 
     public Object operateWithNewObject(Object newModel, Object oldModel)

@@ -9,6 +9,51 @@ import java.lang.reflect.Method;
  */
 public class ReflectUtil {
 
+    public static <T> T objectFromClass(Class clazz, Object... args)
+    {
+        T instance = null;
+
+        try
+        {
+            if (args.length > 0)
+            {
+                Class[] types = new  Class[args.length / 2];
+                Object[] paramters = new Object[args.length / 2];
+                makeParameters(types, paramters, args);
+
+                Constructor c = clazz.getConstructor(types);
+                instance = (T)c.newInstance(paramters);
+            }
+            else
+            {
+                Constructor c = clazz.getConstructor();
+                instance = (T)c.newInstance();
+            }
+        }
+        catch (NullPointerException e)
+        {
+            e.printStackTrace();
+        }
+        catch (NoSuchMethodException e)
+        {
+            e.printStackTrace();
+        }
+        catch (IllegalAccessException e)
+        {
+            e.printStackTrace();
+        }
+        catch (InvocationTargetException e)
+        {
+            e.printStackTrace();
+        }
+        catch (InstantiationException e)
+        {
+            e.printStackTrace();
+        }
+
+        return instance;
+    }
+
     public static <T> T objectFromClassName(String className, Object... args)
     {
         T instance = null;
@@ -18,9 +63,21 @@ public class ReflectUtil {
             return instance;
         }
 
+        Class clazz = null;
+
+        try{
+            clazz = Class.forName(className);
+        }catch (ClassNotFoundException e)
+        {
+            e.printStackTrace();;
+        }
+
+        instance = objectFromClass(clazz, args);
+
+        /*
         try
         {
-            Class clazz = Class.forName(className);
+            //Class clazz = Class.forName(className);
             if (args.length > 0)
             {
                 Class[] types = new  Class[args.length / 2];
@@ -60,6 +117,7 @@ public class ReflectUtil {
         {
             e.printStackTrace();
         }
+        */
 
         return instance;
     }

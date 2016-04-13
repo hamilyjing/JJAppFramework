@@ -1,5 +1,7 @@
 package com.example.hamilyjing.jj_android_service.Tool.Model;
 
+import com.alibaba.fastjson.JSONArray;
+
 import java.io.Serializable;
 
 /**
@@ -9,8 +11,27 @@ public class JJBaseResponseModel implements Serializable, IResponseModel
 {
     private static final long serialVersionUID = 1;
 
+    private String responseResultString;
+    private JSONArray responseResultList;
+
     @Override
     public boolean successForBussiness(Object model) {
         return true;
+    }
+
+    public String getResponseResultString() {
+        return responseResultString;
+    }
+
+    public void setResponseResultString(String responseResultString) {
+        this.responseResultString = responseResultString;
+    }
+
+    public JSONArray getJsonArray() {
+        return responseResultList;
+    }
+
+    public void setJsonArray(JSONArray jsonArray) {
+        this.responseResultList = jsonArray;
     }
 }
