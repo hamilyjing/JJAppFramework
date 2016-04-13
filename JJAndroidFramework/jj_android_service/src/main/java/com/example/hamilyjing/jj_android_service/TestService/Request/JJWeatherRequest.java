@@ -11,4 +11,9 @@ public class JJWeatherRequest extends JJRequest {
     public String baseUrl() {
         return "http://apis.baidu.com/showapi_open_bus/weather_showapi/areaid";
     }
+
+    @Override
+    public boolean successForBussiness(Object model) {
+        return true;
+    }
 }

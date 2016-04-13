@@ -22,7 +22,7 @@ public class JJTestWeatherFeatureSet extends JJFeatureSet {
         JJWeatherRequest weatherRequest = new JJWeatherRequest();
         weatherRequest.setContext(context);
         weatherRequest.setModelClass(JJWeatherModel.class);
-        //weatherRequest.setIsSaveToDisk(true);
+        weatherRequest.setIsSaveToDisk(true);
         startRequst(context, weatherRequest, serviceCallBack);
     }
 }

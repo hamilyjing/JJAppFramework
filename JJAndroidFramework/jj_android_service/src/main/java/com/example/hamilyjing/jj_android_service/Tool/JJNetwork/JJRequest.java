@@ -224,10 +224,13 @@ public class JJRequest extends JJBaseRequest
 
         String argumentSting = "";
         Map<String, String> argument = requestArgument();
-        Set<String> keyList = argument.keySet();
-        for (Iterator it = keyList.iterator(); it.hasNext();) {
-            String key = (String)it.next();
-            argumentSting += key + ":" + argument.get(key) + ",";
+        if (argument != null)
+        {
+            Set<String> keyList = argument.keySet();
+            for (Iterator it = keyList.iterator(); it.hasNext();) {
+                String key = (String)it.next();
+                argumentSting += key + ":" + argument.get(key) + ",";
+            }
         }
 
         String sensitiveData = (this.sensitiveDataForSavedFileName != null) ? this.sensitiveDataForSavedFileName : "";
