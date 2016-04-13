@@ -118,6 +118,8 @@ public class JJRequest extends JJBaseRequest
             model = ReflectUtil.objectFromClass(getModelClass());
         }
 
+        ((JJBaseResponseModel)model).setData((JSONObject)object);
+
         return model;
     }
 
