@@ -24,8 +24,6 @@ import java.util.Set;
  */
 public class JJRequest extends JJBaseRequest
 {
-    private Context context;
-
     private boolean isSaveToMemory;
     private boolean isSaveToDisk;
 
@@ -197,16 +195,6 @@ public class JJRequest extends JJBaseRequest
     {
         String directory = getContext().getFilesDir().getPath();
 
-//        if (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState())
-//                || !Environment.isExternalStorageRemovable())
-//        {
-//            directory = getContext().getExternalCacheDir().getPath();
-//        }
-//        else
-//        {
-//            directory = getContext().getCacheDir().getPath();
-//        }
-
         directory = directory + "/JJRequestCache";
 
         if (getUserCacheDirectory() != null && getUserCacheDirectory().length() > 0)
@@ -331,13 +319,5 @@ public class JJRequest extends JJBaseRequest
 
     public void setSensitiveDataForSavedFileName(String sensitiveDataForSavedFileName) {
         this.sensitiveDataForSavedFileName = sensitiveDataForSavedFileName;
-    }
-
-    public Context getContext() {
-        return context;
-    }
-
-    public void setContext(Context context) {
-        this.context = context;
     }
 }

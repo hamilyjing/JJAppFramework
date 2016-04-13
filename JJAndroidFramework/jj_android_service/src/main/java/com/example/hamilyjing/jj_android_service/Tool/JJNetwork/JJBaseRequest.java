@@ -1,5 +1,6 @@
 package com.example.hamilyjing.jj_android_service.Tool.JJNetwork;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 
 import java.util.Collection;
@@ -20,6 +21,8 @@ public class JJBaseRequest {
         JJRequestMethodDelete,
         JJRequestMethodPatch
     }
+
+    private Context context;
 
     private Integer timeoutInterval = 60;
     private JJRequestMethod requestMethod = JJRequestMethod.JJRequestMethodGet;
@@ -139,5 +142,13 @@ public class JJBaseRequest {
 
     public void setResponseString(String responseString) {
         this.responseString = responseString;
+    }
+
+    public Context getContext() {
+        return context;
+    }
+
+    public void setContext(Context context) {
+        this.context = context;
     }
 }

@@ -48,13 +48,13 @@ public class JJNetworkAgent {
         {
             case JJRequestMethodPost:
             {
-                client.post(url, params, textHttpResponseHandler);
+                client.post(request.getContext(), url, params, textHttpResponseHandler);
             }
             break;
 
             case JJRequestMethodGet:
             {
-                client.get(url, params, textHttpResponseHandler);
+                client.get(request.getContext(), url, params, textHttpResponseHandler);
             }
             break;
 
@@ -66,19 +66,19 @@ public class JJNetworkAgent {
 
             case JJRequestMethodPut:
             {
-                client.put(url, params, textHttpResponseHandler);
+                client.put(request.getContext(), url, params, textHttpResponseHandler);
             }
             break;
 
             case JJRequestMethodPatch:
             {
-                client.patch(url, params, textHttpResponseHandler);
+                client.patch(request.getContext(), url, params, textHttpResponseHandler);
             }
             break;
 
             case JJRequestMethodHead:
             {
-                client.head(url, params, textHttpResponseHandler);
+                client.head(request.getContext(), url, params, textHttpResponseHandler);
             }
             break;
 
