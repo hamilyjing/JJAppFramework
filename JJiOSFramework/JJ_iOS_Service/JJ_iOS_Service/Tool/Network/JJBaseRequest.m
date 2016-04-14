@@ -37,7 +37,7 @@
         self.operationType = operationType_;
         self.parameters = parameters_;
         
-        self.requestMethodType = YTKRequestMethodPost;
+        self.requestMethodType = YTKRequestMethodGet;
         
         self.isSaveToMemory = isSaveToMemory_;
         self.isSaveToDisk = isSaveToDisk_;

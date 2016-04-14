@@ -15,4 +15,14 @@
     return @"http://apis.baidu.com/showapi_open_bus/weather_showapi/areaid";
 }
 
+- (NSString *)requestUrl
+{
+    return @"";
+}
+
+- (id)requestArgument
+{
+    return @"";
+}
+
 @end

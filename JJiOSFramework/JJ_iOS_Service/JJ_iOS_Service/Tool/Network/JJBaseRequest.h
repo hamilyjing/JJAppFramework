@@ -6,9 +6,9 @@
 //  Copyright © 2015 JJ. All rights reserved.
 //
 
-#import "YTKBaseRequest.h"
+#import "YTKRequest.h"
 
-@interface JJBaseRequest : YTKBaseRequest
+@interface JJBaseRequest : YTKRequest
 
 @property (nonatomic, assign) YTKRequestMethod requestMethodType;
 
