@@ -15,11 +15,6 @@
 
 @property (nonatomic, weak) JJService *service;
 
-/**
- *  Return the class name of feature set, subClass must overwrite.
- *
- *  @return Feature set class name.
- */
 + (NSString *)featureSetName;
 
 - (void)featureSetWillLoad;
@@ -40,13 +35,13 @@
            parameter:(id)parameter
            otherInfo:(id)otherInfo;
 
-- (void)startGPRequest:(JJBaseRequest *)request
-             otherInfo:(id)otherInfo
-         successAction:(void (^)(id object, NSString *responseString, JJBaseRequest *request))successAction
-            failAction:(void (^)(NSError *error, JJBaseRequest *request))failAction;
+- (void)startRequest:(JJBaseRequest *)request
+           otherInfo:(id)otherInfo
+       successAction:(void (^)(id object, NSString *responseString, JJBaseRequest *request))successAction
+          failAction:(void (^)(NSError *error, JJBaseRequest *request))failAction;
 
-- (void)startGPRequest:(JJBaseRequest *)request
-             otherInfo:(id)otherInfo;
+- (void)startRequest:(JJBaseRequest *)request
+           otherInfo:(id)otherInfo;
 
 - (id)cacheModelWithParameters:(NSDictionary *)parameters
                   requestClass:(Class)requestClass

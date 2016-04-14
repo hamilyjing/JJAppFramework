@@ -107,10 +107,10 @@
             failAction:nil];
 }
 
-- (void)startGPRequest:(JJBaseRequest *)request_
-             otherInfo:(id)otherInfo_
-         successAction:(void (^)(id object, NSString *responseString, JJBaseRequest *request))successAction_
-            failAction:(void (^)(NSError *error, JJBaseRequest *request))failAction_
+- (void)startRequest:(JJBaseRequest *)request_
+           otherInfo:(id)otherInfo_
+       successAction:(void (^)(id object, NSString *responseString, JJBaseRequest *request))successAction_
+          failAction:(void (^)(NSError *error, JJBaseRequest *request))failAction_
 {
     [self startRequest:request_
            requestType:request_.operationType
@@ -120,13 +120,13 @@
             failAction:(void (^)(NSError *error, JJBaseRequest *request))failAction_];
 }
 
-- (void)startGPRequest:(JJBaseRequest *)request_
-             otherInfo:(id)otherInfo_
+- (void)startRequest:(JJBaseRequest *)request_
+           otherInfo:(id)otherInfo_
 {
-    [self startGPRequest:request_
-               otherInfo:otherInfo_
-           successAction:nil
-              failAction:nil];
+    [self startRequest:request_
+             otherInfo:otherInfo_
+         successAction:nil
+            failAction:nil];
 }
 
 - (id)cacheModelWithParameters:(NSDictionary *)parameters_
@@ -152,7 +152,7 @@
     request.networkSuccessResponse = networkSuccessResponse_;
     request.networkFailResponse = networkFailResponse_;
     
-    [self startGPRequest:request otherInfo:nil];
+    [self startRequest:request otherInfo:nil];
 }
 
 - (void)actionAfterLogin

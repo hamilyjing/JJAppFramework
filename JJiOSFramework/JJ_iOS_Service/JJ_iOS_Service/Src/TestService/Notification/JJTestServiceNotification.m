@@ -8,4 +8,4 @@
 
 #import "JJTestServiceNotification.h"
 
-NSString *JJTestServiceWeatherNotification = @"YZTResourceService_weather";
+NSString *JJTestServiceWeatherNotification = @"JJTestService_weather";

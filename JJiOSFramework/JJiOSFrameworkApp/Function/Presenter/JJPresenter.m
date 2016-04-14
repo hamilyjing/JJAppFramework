@@ -12,7 +12,7 @@
 
 #pragma mark - delegate
 
-#pragma mark -- YZTServiceDelegate
+#pragma mark -- JJServiceDelegate
 
 - (void)networkSuccessResponse:(JJService *)service_
                    requestType:(NSString *)requestType_

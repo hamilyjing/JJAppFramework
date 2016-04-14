@@ -39,11 +39,6 @@ extern NSString *JJLoginServiceLogOutNotification;
 
 @interface JJService : NSObject
 
-/**
- *  Return the class name of service, subClass must overwrite.
- *
- *  @return Service class name.
- */
 + (NSString *)serviceName;
 
 /**
