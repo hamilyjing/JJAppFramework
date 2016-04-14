@@ -11,7 +11,7 @@
 //FOUNDATION_EXPORT void JJLog(NSString *format, ...) NS_FORMAT_FUNCTION(1,2);
 
 #ifdef DEBUG
-#define JJLog(fmt, ...) NSLog(fmt @" %s line:%d", ##__VA_ARGS__, __PRETTY_FUNCTION__, __LINE__)
+#define JJServiceLog(fmt, ...) NSLog(fmt @" %s line:%d", ##__VA_ARGS__, __PRETTY_FUNCTION__, __LINE__)
 #else
-#define JJLog(fmt, ...)
+#define JJServiceLog(fmt, ...)
 #endif

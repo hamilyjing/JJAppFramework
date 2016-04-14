@@ -8,7 +8,7 @@
 
 #import "JJServiceFactory.h"
 
-#import "JJLog.h"
+#import "JJServiceLog.h"
 #import "JJService.h"
 
 static NSString *JJLogNameServiceFactory = @"[ServiceFactory]";
@@ -43,7 +43,7 @@ static NSString *JJLogNameServiceFactory = @"[ServiceFactory]";
         return service;
     }
     
-    JJLog(@"%@ load service: %@", JJLogNameServiceFactory, serviceName_);
+    JJServiceLog(@"%@ load service: %@", JJLogNameServiceFactory, serviceName_);
     
     [self JJ_unloadUnneededService];
     
@@ -65,7 +65,7 @@ static NSString *JJLogNameServiceFactory = @"[ServiceFactory]";
 {
     NSParameterAssert(serviceName_);
     
-    JJLog(@"%@ unload service: %@, force: %d", JJLogNameServiceFactory, serviceName_, isForceUnload_);
+    JJServiceLog(@"%@ unload service: %@, force: %d", JJLogNameServiceFactory, serviceName_, isForceUnload_);
     
     JJService *service = self.serviceContainer[serviceName_];
     

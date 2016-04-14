@@ -22,7 +22,7 @@
 		28BB33BA1C86CB5C00183DE3 /* JJNSStringHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BB339F1C86CB5C00183DE3 /* JJNSStringHelper.m */; };
 		28BB33BB1C86CB5C00183DE3 /* JJUIDeviceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BB33A11C86CB5C00183DE3 /* JJUIDeviceHelper.m */; };
 		28BB33BC1C86CB5C00183DE3 /* JJLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BB33A41C86CB5C00183DE3 /* JJLocationManager.m */; };
-		28BB33BE1C86CB5C00183DE3 /* JJModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BB33A71C86CB5C00183DE3 /* JJModel.m */; };
+		28BB33BE1C86CB5C00183DE3 /* JJBaseResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BB33A71C86CB5C00183DE3 /* JJBaseResponseModel.m */; };
 		28BB33BF1C86CB5C00183DE3 /* JJBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BB33AA1C86CB5C00183DE3 /* JJBaseRequest.m */; };
 /* End PBXBuildFile section */
 
@@ -39,14 +39,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		283C60411CBF400100AF0E51 /* JJServiceLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJServiceLog.h; sourceTree = "<group>"; };
 		28BB33111C86B42100183DE3 /* libJJ_iOS_Service.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libJJ_iOS_Service.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		28BB33761C86CB5C00183DE3 /* JJServiceNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJServiceNotification.h; sourceTree = "<group>"; };
 		28BB33781C86CB5C00183DE3 /* JJService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJService.h; sourceTree = "<group>"; };
 		28BB33791C86CB5C00183DE3 /* JJServiceBatchRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJServiceBatchRequest.h; sourceTree = "<group>"; };
 		28BB337A1C86CB5C00183DE3 /* JJServiceChainRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJServiceChainRequest.h; sourceTree = "<group>"; };
 		28BB337B1C86CB5C00183DE3 /* JJServiceFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJServiceFactory.h; sourceTree = "<group>"; };
-		28BB337E1C86CB5C00183DE3 /* JJLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJLog.h; sourceTree = "<group>"; };
-		28BB33811C86CB5C00183DE3 /* JJModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJModel.h; sourceTree = "<group>"; };
+		28BB33811C86CB5C00183DE3 /* JJBaseResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJBaseResponseModel.h; sourceTree = "<group>"; };
 		28BB33871C86CB5C00183DE3 /* JJFeatureSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJFeatureSet.h; sourceTree = "<group>"; };
 		28BB33881C86CB5C00183DE3 /* JJFeatureSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJFeatureSet.m; sourceTree = "<group>"; };
 		28BB338A1C86CB5C00183DE3 /* JJServiceNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJServiceNotification.m; sourceTree = "<group>"; };
@@ -72,7 +72,7 @@
 		28BB33A11C86CB5C00183DE3 /* JJUIDeviceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJUIDeviceHelper.m; sourceTree = "<group>"; };
 		28BB33A31C86CB5C00183DE3 /* JJLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJLocationManager.h; sourceTree = "<group>"; };
 		28BB33A41C86CB5C00183DE3 /* JJLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJLocationManager.m; sourceTree = "<group>"; };
-		28BB33A71C86CB5C00183DE3 /* JJModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJModel.m; sourceTree = "<group>"; };
+		28BB33A71C86CB5C00183DE3 /* JJBaseResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJBaseResponseModel.m; sourceTree = "<group>"; };
 		28BB33A91C86CB5C00183DE3 /* JJBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJBaseRequest.h; sourceTree = "<group>"; };
 		28BB33AA1C86CB5C00183DE3 /* JJBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJBaseRequest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,6 +88,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		283C60401CBF400100AF0E51 /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				283C60411CBF400100AF0E51 /* JJServiceLog.h */,
+			);
+			path = Log;
+			sourceTree = "<group>";
+		};
 		28BB33081C86B42100183DE3 = {
 			isa = PBXGroup;
 			children = (
@@ -154,24 +162,15 @@
 		28BB337C1C86CB5C00183DE3 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				28BB337D1C86CB5C00183DE3 /* Log */,
 				28BB337F1C86CB5C00183DE3 /* Model */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
 		};
-		28BB337D1C86CB5C00183DE3 /* Log */ = {
-			isa = PBXGroup;
-			children = (
-				28BB337E1C86CB5C00183DE3 /* JJLog.h */,
-			);
-			path = Log;
-			sourceTree = "<group>";
-		};
 		28BB337F1C86CB5C00183DE3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				28BB33811C86CB5C00183DE3 /* JJModel.h */,
+				28BB33811C86CB5C00183DE3 /* JJBaseResponseModel.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -225,6 +224,7 @@
 		28BB33901C86CB5C00183DE3 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				283C60401CBF400100AF0E51 /* Log */,
 				28BB33911C86CB5C00183DE3 /* Helper */,
 				28BB33A21C86CB5C00183DE3 /* Location */,
 				28BB33A51C86CB5C00183DE3 /* Model */,
@@ -268,7 +268,7 @@
 		28BB33A51C86CB5C00183DE3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				28BB33A71C86CB5C00183DE3 /* JJModel.m */,
+				28BB33A71C86CB5C00183DE3 /* JJBaseResponseModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -348,7 +348,7 @@
 				28BB33B41C86CB5C00183DE3 /* JJNSArrayHelper.m in Sources */,
 				28BB33B51C86CB5C00183DE3 /* JJNSDataHelper.m in Sources */,
 				28BB33BC1C86CB5C00183DE3 /* JJLocationManager.m in Sources */,
-				28BB33BE1C86CB5C00183DE3 /* JJModel.m in Sources */,
+				28BB33BE1C86CB5C00183DE3 /* JJBaseResponseModel.m in Sources */,
 				28BB33BF1C86CB5C00183DE3 /* JJBaseRequest.m in Sources */,
 				28BB33AF1C86CB5C00183DE3 /* JJServiceNotification.m in Sources */,
 				28BB33B81C86CB5C00183DE3 /* JJNSMutableArrayHelper.m in Sources */,
