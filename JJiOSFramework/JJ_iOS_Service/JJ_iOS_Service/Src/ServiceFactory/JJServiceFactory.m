@@ -40,6 +40,8 @@ static NSString *JJLogNameServiceFactory = @"[ServiceFactory]";
     JJService *service = self.serviceContainer[serviceName_];
     if (service)
     {
+        JJServiceLog(@"%@ get service:%@, \nservice container: \n%@", JJLogNameServiceFactory, serviceName_, self.serviceContainer);
+        
         return service;
     }
     
@@ -92,6 +94,8 @@ static NSString *JJLogNameServiceFactory = @"[ServiceFactory]";
             [unloadingKeys addObject:key];
         }
     }];
+    
+    JJServiceLog(@"%@ unload unneeded service, \nservice container: \n%@, \nremove services: \n%@", JJLogNameServiceFactory, self.serviceContainer, unloadingKeys);
     
     [self.serviceContainer removeObjectsForKeys:unloadingKeys];
 }

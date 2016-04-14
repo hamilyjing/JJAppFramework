@@ -16,6 +16,8 @@
 
 @property (nonatomic, strong) id jjCacheModel;
 
+@property (nonatomic, strong) id oldModel;
+
 @end
 
 @implementation JJBaseRequest
@@ -41,8 +43,10 @@
     
     id model = [self convertToModel:[self responseString]];
     
+    self.oldModel = [self cacheModel];
+    
     NSInteger updateCount;
-    model = [self operateWithNewObject:model oldObject:[self cacheModel] updateCount:&updateCount];
+    model = [self operateWithNewObject:model oldObject:self.oldModel updateCount:&updateCount];
     
     if (![self successForBussiness:model])
     {
@@ -78,7 +82,7 @@
     id model = [self convertToModel:[self responseString]];
     
     NSInteger updateCount;
-    model = [self operateWithNewObject:model oldObject:[self cacheModel] updateCount:&updateCount];
+    model = [self operateWithNewObject:model oldObject:self.oldModel updateCount:&updateCount];
     
     return model;
 }

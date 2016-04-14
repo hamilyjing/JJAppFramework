@@ -58,6 +58,12 @@ NSString *JJLoginServiceLogOutNotification = @"JJLoginServiceLogOutNotification"
 
 #pragma mark - public
 
+- (NSString *)description
+{
+    NSString *string = [NSString stringWithFormat:@"requestFinishCount: %ld, delegateList: %@", self.requestFinishCount, self.delegateList];
+    return string;
+}
+
 + (NSString *)serviceName
 {
     return NSStringFromClass(self.class);
