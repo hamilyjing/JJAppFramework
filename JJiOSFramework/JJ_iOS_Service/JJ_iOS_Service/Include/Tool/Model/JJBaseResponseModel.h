@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JJBaseResponseModel : NSObject
+#import "JJBaseRequestProtocol.h"
+
+@interface JJBaseResponseModel : NSObject <JJBaseRequestProtocol>
+
+/// the value for root key is array
+@property (nonatomic, strong) NSArray *responseResultList;
+
+/// the value for root key is string
+@property (nonatomic, copy) NSString *responseResultString;
 
 @end

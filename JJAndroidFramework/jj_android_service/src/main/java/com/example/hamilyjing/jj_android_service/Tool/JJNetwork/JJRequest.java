@@ -78,7 +78,7 @@ public class JJRequest extends JJBaseRequest
 
     public boolean successForBussiness(Object model)
     {
-        boolean successForBussiness = false;
+        boolean successForBussiness = true;
 
         if (ReflectUtil.isInterface(model.getClass(), "com.example.hamilyjing.jj_android_service.Tool.Model.IResponseModel"))
         {

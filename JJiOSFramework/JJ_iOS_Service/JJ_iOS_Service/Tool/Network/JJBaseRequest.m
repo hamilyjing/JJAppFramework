@@ -11,6 +11,9 @@
 
 #import "YYModel.h"
 #import "JJNSStringHelper.h"
+#import "JJBaseRequestProtocol.h"
+#import "JJServiceLog.h"
+#import "JJBaseResponseModel.h"
 
 @interface JJBaseRequest ()
 
@@ -137,9 +140,57 @@
     [self removeDiskCache];
 }
 
+- (id)getConvertModelContent:(NSDictionary *)responseDictionary_
+{
+    return responseDictionary_;
+}
+
 - (id)convertToModel:(NSString *)JSONString_
 {
-    id model = [JSONString_ hasPrefix:@"["] ? [NSArray yy_modelArrayWithClass:self.modelClass json:JSONString_] : [self.modelClass yy_modelWithJSON:JSONString_];
+    NSString *responseString = [self responseString];
+    
+    NSDictionary *responseDic = [JJNSStringHelper dictionaryWithJSON:responseString];
+    if (![responseDic isKindOfClass:[NSDictionary class]])
+    {
+        JJServiceLog(@"-- [error] response string:\n%@", responseString);
+        return nil;
+    }
+    
+    JJServiceLog(@"-- response dictionary:\n%@", responseDic);
+    
+    NSDictionary *resultDic = [self getConvertModelContent:responseDic];
+    NSObject *model;
+    
+    if ([resultDic isKindOfClass:[NSDictionary class]])
+    {
+        model = [[self modelClass] yy_modelWithDictionary:resultDic];
+    }
+    else if ([resultDic isKindOfClass:[NSArray class]])
+    {
+        model = [[[self modelClass] alloc] init];
+        if ([model isKindOfClass:[JJBaseResponseModel class]])
+        {
+            ((JJBaseResponseModel *)model).responseResultList = [NSArray yy_modelArrayWithClass:[self modelClass] json:resultDic];
+        }
+    }
+    else if ([resultDic isKindOfClass:[NSString class]])
+    {
+        model = [[[self modelClass] alloc] init];
+        if ([model isKindOfClass:[JJBaseResponseModel class]])
+        {
+            ((JJBaseResponseModel *)model).responseResultString = responseDic;
+        }
+    }
+    else
+    {
+        model = [[[self modelClass] alloc] init];
+    }
+    
+    if ([model respondsToSelector:@selector(setData:)])
+    {
+        [(id<JJBaseRequestProtocol>)model setData:responseDic];
+    }
+    
     return model;
 }
 
@@ -158,7 +209,14 @@
 
 - (BOOL)successForBussiness:(id)model_
 {
-    return NO;
+    BOOL successForBussiness = YES;
+    
+    if ([(NSObject *)model_ respondsToSelector:@selector(successForBussiness:)])
+    {
+        successForBussiness = [(id<JJBaseRequestProtocol>)model_ successForBussiness:model_];
+    }
+    
+    return successForBussiness;
 }
 
 - (NSString *)savedFilePath

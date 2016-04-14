@@ -11,16 +11,6 @@
 		28BB33411C86B45400183DE3 /* JJ_iOS_UI.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BB33401C86B45400183DE3 /* JJ_iOS_UI.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		28BB336E1C86B54100183DE3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 28BB336A1C86B54100183DE3 /* JJ_iOS_Service.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 28BB33111C86B42100183DE3;
-			remoteInfo = JJ_iOS_Service;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		28BB33391C86B45400183DE3 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -38,7 +28,6 @@
 		28BB333B1C86B45400183DE3 /* libJJ_iOS_UI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libJJ_iOS_UI.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		28BB333E1C86B45400183DE3 /* JJ_iOS_UI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JJ_iOS_UI.h; sourceTree = "<group>"; };
 		28BB33401C86B45400183DE3 /* JJ_iOS_UI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JJ_iOS_UI.m; sourceTree = "<group>"; };
-		28BB336A1C86B54100183DE3 /* JJ_iOS_Service.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = JJ_iOS_Service.xcodeproj; path = ../JJ_iOS_Service/JJ_iOS_Service.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +44,6 @@
 		28BB33321C86B45400183DE3 = {
 			isa = PBXGroup;
 			children = (
-				28BB336A1C86B54100183DE3 /* JJ_iOS_Service.xcodeproj */,
 				28BB333D1C86B45400183DE3 /* JJ_iOS_UI */,
 				28BB333C1C86B45400183DE3 /* Products */,
 			);
@@ -76,14 +64,6 @@
 				28BB33401C86B45400183DE3 /* JJ_iOS_UI.m */,
 			);
 			path = JJ_iOS_UI;
-			sourceTree = "<group>";
-		};
-		28BB336B1C86B54100183DE3 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				28BB336F1C86B54100183DE3 /* libJJ_iOS_Service.a */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,28 +110,12 @@
 			mainGroup = 28BB33321C86B45400183DE3;
 			productRefGroup = 28BB333C1C86B45400183DE3 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 28BB336B1C86B54100183DE3 /* Products */;
-					ProjectRef = 28BB336A1C86B54100183DE3 /* JJ_iOS_Service.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				28BB333A1C86B45400183DE3 /* JJ_iOS_UI */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		28BB336F1C86B54100183DE3 /* libJJ_iOS_Service.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libJJ_iOS_Service.a;
-			remoteRef = 28BB336E1C86B54100183DE3 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
 		28BB33371C86B45400183DE3 /* Sources */ = {
