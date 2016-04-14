@@ -1,10 +1,10 @@
 
 //
 //  JJBaseRequest.m
-//  YiZhangTong_iOS_CommonLayer
+//  JJ_iOS_CommonLayer
 //
 //  Created by JJ on 12/12/15.
-//  Copyright © 2015 yizhangtong. All rights reserved.
+//  Copyright © 2015 JJ. All rights reserved.
 //
 
 #import "JJBaseRequest.h"
@@ -24,6 +24,38 @@
 @end
 
 @implementation JJBaseRequest
+
+- (instancetype)initWithOperationType:(NSString *)operationType_
+                           parameters:(NSDictionary *)parameters_
+                           modelClass:(Class)modelClass_
+                       isSaveToMemory:(BOOL)isSaveToMemory_
+                         isSaveToDisk:(BOOL)isSaveToDisk_
+{
+    self = [super init];
+    if (self)
+    {
+        self.operationType = operationType_;
+        self.parameters = parameters_;
+        
+        self.requestMethodType = YTKRequestMethodPost;
+        
+        self.isSaveToMemory = isSaveToMemory_;
+        self.isSaveToDisk = isSaveToDisk_;
+        
+        if (modelClass_)
+        {
+            self.modelClass = modelClass_;
+        }
+        else
+        {
+            self.modelClass = [JJBaseResponseModel class];
+        }
+        
+        self.parametersForSavedFileName = self.parameters;
+    }
+    
+    return self;
+}
 
 #pragma mark - overwrite
 
@@ -246,10 +278,10 @@
 {
     NSString *baseUrl = [self baseUrl];
     NSString *requestUrl = [self requestUrl];
-    id argument = [self requestArgument];
+    NSDictionary *parameters = self.parametersForSavedFileName ? self.parametersForSavedFileName : @{};;
     NSString *requestInfo = [NSString stringWithFormat:@"Method:%ld Host:%@ Url:%@ Argument:%@ Sensitive:%@",
                              (long)[self requestMethod], baseUrl, requestUrl,
-                             argument, self.sensitiveDataForSavedFileName];
+                             parameters, self.sensitiveDataForSavedFileName];
     NSString *cacheFileName = [JJNSStringHelper md5String:requestInfo];
     return cacheFileName;
 }

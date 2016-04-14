@@ -1,6 +1,6 @@
 //
 //  JJLog.h
-//  YiZhangTong_iOS_Service
+//  JJ_iOS_Service
 //
 //  Created by JJ on 12/27/15.
 //  Copyright © 2015 JJ. All rights reserved.

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		283C60491CBF63AF00AF0E51 /* JJTestService.m in Sources */ = {isa = PBXBuildFile; fileRef = 283C60481CBF63AF00AF0E51 /* JJTestService.m */; };
+		283C60521CBF643A00AF0E51 /* JJWeatherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 283C60511CBF643A00AF0E51 /* JJWeatherModel.m */; };
+		283C60551CBF649600AF0E51 /* JJWeatherRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 283C60541CBF649600AF0E51 /* JJWeatherRequest.m */; };
+		283C60581CBF64F300AF0E51 /* JJTestWeatherFeatureSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 283C60571CBF64F300AF0E51 /* JJTestWeatherFeatureSet.m */; };
+		283C606F1CBF73BB00AF0E51 /* JJTestServiceNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 283C606E1CBF73BB00AF0E51 /* JJTestServiceNotification.m */; };
 		28BB33AE1C86CB5C00183DE3 /* JJFeatureSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BB33881C86CB5C00183DE3 /* JJFeatureSet.m */; };
 		28BB33AF1C86CB5C00183DE3 /* JJServiceNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BB338A1C86CB5C00183DE3 /* JJServiceNotification.m */; };
 		28BB33B01C86CB5C00183DE3 /* JJService.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BB338C1C86CB5C00183DE3 /* JJService.m */; };
@@ -41,6 +46,16 @@
 /* Begin PBXFileReference section */
 		283C60411CBF400100AF0E51 /* JJServiceLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJServiceLog.h; sourceTree = "<group>"; };
 		283C60421CBF47A900AF0E51 /* JJBaseRequestProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJBaseRequestProtocol.h; sourceTree = "<group>"; };
+		283C60441CBF638900AF0E51 /* JJTestService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTestService.h; sourceTree = "<group>"; };
+		283C60481CBF63AF00AF0E51 /* JJTestService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTestService.m; sourceTree = "<group>"; };
+		283C604E1CBF641D00AF0E51 /* JJWeatherModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJWeatherModel.h; sourceTree = "<group>"; };
+		283C60511CBF643A00AF0E51 /* JJWeatherModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJWeatherModel.m; sourceTree = "<group>"; };
+		283C60531CBF649600AF0E51 /* JJWeatherRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJWeatherRequest.h; sourceTree = "<group>"; };
+		283C60541CBF649600AF0E51 /* JJWeatherRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJWeatherRequest.m; sourceTree = "<group>"; };
+		283C60561CBF64F300AF0E51 /* JJTestWeatherFeatureSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTestWeatherFeatureSet.h; sourceTree = "<group>"; };
+		283C60571CBF64F300AF0E51 /* JJTestWeatherFeatureSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTestWeatherFeatureSet.m; sourceTree = "<group>"; };
+		283C606D1CBF738600AF0E51 /* JJTestServiceNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTestServiceNotification.h; sourceTree = "<group>"; };
+		283C606E1CBF73BB00AF0E51 /* JJTestServiceNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTestServiceNotification.m; sourceTree = "<group>"; };
 		28BB33111C86B42100183DE3 /* libJJ_iOS_Service.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libJJ_iOS_Service.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		28BB33761C86CB5C00183DE3 /* JJServiceNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJServiceNotification.h; sourceTree = "<group>"; };
 		28BB33781C86CB5C00183DE3 /* JJService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJService.h; sourceTree = "<group>"; };
@@ -97,6 +112,78 @@
 			path = Log;
 			sourceTree = "<group>";
 		};
+		283C60431CBF636F00AF0E51 /* TestService */ = {
+			isa = PBXGroup;
+			children = (
+				283C60441CBF638900AF0E51 /* JJTestService.h */,
+				283C604D1CBF63F200AF0E51 /* Model */,
+				283C606C1CBF733000AF0E51 /* Notification */,
+			);
+			path = TestService;
+			sourceTree = "<group>";
+		};
+		283C60471CBF63AF00AF0E51 /* TestService */ = {
+			isa = PBXGroup;
+			children = (
+				283C604A1CBF63E400AF0E51 /* FeatureSet */,
+				283C60481CBF63AF00AF0E51 /* JJTestService.m */,
+				283C604B1CBF63E400AF0E51 /* Model */,
+				283C604C1CBF63E400AF0E51 /* Network */,
+				283C606B1CBF731D00AF0E51 /* Notification */,
+			);
+			path = TestService;
+			sourceTree = "<group>";
+		};
+		283C604A1CBF63E400AF0E51 /* FeatureSet */ = {
+			isa = PBXGroup;
+			children = (
+				283C60561CBF64F300AF0E51 /* JJTestWeatherFeatureSet.h */,
+				283C60571CBF64F300AF0E51 /* JJTestWeatherFeatureSet.m */,
+			);
+			path = FeatureSet;
+			sourceTree = "<group>";
+		};
+		283C604B1CBF63E400AF0E51 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				283C60511CBF643A00AF0E51 /* JJWeatherModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		283C604C1CBF63E400AF0E51 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				283C60531CBF649600AF0E51 /* JJWeatherRequest.h */,
+				283C60541CBF649600AF0E51 /* JJWeatherRequest.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		283C604D1CBF63F200AF0E51 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				283C604E1CBF641D00AF0E51 /* JJWeatherModel.h */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		283C606B1CBF731D00AF0E51 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				283C606E1CBF73BB00AF0E51 /* JJTestServiceNotification.m */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		283C606C1CBF733000AF0E51 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				283C606D1CBF738600AF0E51 /* JJTestServiceNotification.h */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
 		28BB33081C86B42100183DE3 = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				28BB33741C86CB5C00183DE3 /* ServiceFactory */,
+				283C60431CBF636F00AF0E51 /* TestService */,
 				28BB337C1C86CB5C00183DE3 /* Tool */,
 			);
 			path = Include;
@@ -181,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				28BB33831C86CB5C00183DE3 /* ServiceFactory */,
+				283C60471CBF63AF00AF0E51 /* TestService */,
 			);
 			path = Src;
 			sourceTree = "<group>";
@@ -347,13 +436,18 @@
 				28BB33B11C86CB5C00183DE3 /* JJServiceBatchRequest.m in Sources */,
 				28BB33B71C86CB5C00183DE3 /* JJNSFileManagerHelper.m in Sources */,
 				28BB33BB1C86CB5C00183DE3 /* JJUIDeviceHelper.m in Sources */,
+				283C60581CBF64F300AF0E51 /* JJTestWeatherFeatureSet.m in Sources */,
 				28BB33B41C86CB5C00183DE3 /* JJNSArrayHelper.m in Sources */,
 				28BB33B51C86CB5C00183DE3 /* JJNSDataHelper.m in Sources */,
+				283C606F1CBF73BB00AF0E51 /* JJTestServiceNotification.m in Sources */,
 				28BB33BC1C86CB5C00183DE3 /* JJLocationManager.m in Sources */,
+				283C60551CBF649600AF0E51 /* JJWeatherRequest.m in Sources */,
 				28BB33BE1C86CB5C00183DE3 /* JJBaseResponseModel.m in Sources */,
 				28BB33BF1C86CB5C00183DE3 /* JJBaseRequest.m in Sources */,
 				28BB33AF1C86CB5C00183DE3 /* JJServiceNotification.m in Sources */,
+				283C60491CBF63AF00AF0E51 /* JJTestService.m in Sources */,
 				28BB33B81C86CB5C00183DE3 /* JJNSMutableArrayHelper.m in Sources */,
+				283C60521CBF643A00AF0E51 /* JJWeatherModel.m in Sources */,
 				28BB33B91C86CB5C00183DE3 /* JJNSMutableDictionaryHelper.m in Sources */,
 				28BB33B01C86CB5C00183DE3 /* JJService.m in Sources */,
 				28BB33B31C86CB5C00183DE3 /* JJServiceFactory.m in Sources */,

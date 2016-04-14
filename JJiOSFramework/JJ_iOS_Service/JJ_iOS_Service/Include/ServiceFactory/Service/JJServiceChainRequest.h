@@ -1,6 +1,6 @@
 //
 //  JJServiceChainRequest.h
-//  YiZhangTong_iOS_Service
+//  JJ_iOS_Service
 //
 //  Created by JJ on 1/8/16.
 //  Copyright © 2016 JJ. All rights reserved.

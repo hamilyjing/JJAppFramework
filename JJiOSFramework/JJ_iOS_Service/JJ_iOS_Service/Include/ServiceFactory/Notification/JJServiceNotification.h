@@ -1,6 +1,6 @@
 //
 //  JJServiceNotification.h
-//  YiZhangTong_iOS_Service
+//  JJ_iOS_Service
 //
 //  Created by JJ on 12/20/15.
 //  Copyright © 2015 JJ. All rights reserved.
@@ -12,6 +12,7 @@ extern NSString *JJServiceNotificationKeyService;
 extern NSString *JJServiceNotificationKeyParameter;
 extern NSString *JJServiceNotificationKeySuccess;
 extern NSString *JJServiceNotificationKeyObject;
+extern NSString *JJServiceNotificationKeyResponseString;
 extern NSString *JJServiceNotificationKeyOtherInfo;
 
 // network

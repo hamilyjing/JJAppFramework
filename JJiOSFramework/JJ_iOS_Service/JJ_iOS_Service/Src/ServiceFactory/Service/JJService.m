@@ -170,8 +170,9 @@ NSString *JJLoginServiceLogOutNotification = @"JJLoginServiceLogOutNotification"
                       parameter:(id)parameter_
                         success:(BOOL)success_
                          object:(id)object_
+                 responseString:(NSString *)responseString_
                       otherInfo:(id)otherInfo_
-         networkSuccessResponse:(void (^)(id object, id otherInfo))networkSuccessResponse_
+         networkSuccessResponse:(void (^)(id object, NSString *responseString, id otherInfo))networkSuccessResponse_
             networkFailResponse:(void (^)(id error, id otherInfo))networkFailResponse_
 {
     NSHashTable *delegateListCopy = [self.delegateList copy];
@@ -180,7 +181,7 @@ NSString *JJLoginServiceLogOutNotification = @"JJLoginServiceLogOutNotification"
     {
         if (networkSuccessResponse_)
         {
-            networkSuccessResponse_(object_, otherInfo_);
+            networkSuccessResponse_(object_, responseString_, otherInfo_);
         }
         
         for (id<JJServiceDelegate> delegate in delegateListCopy)
@@ -191,6 +192,7 @@ NSString *JJLoginServiceLogOutNotification = @"JJLoginServiceLogOutNotification"
                                      requestType:requestType_
                                        parameter:parameter_
                                           object:object_
+                                  responseString:responseString_
                                        otherInfo:otherInfo_];
             }
         }
@@ -219,6 +221,7 @@ NSString *JJLoginServiceLogOutNotification = @"JJLoginServiceLogOutNotification"
                                 parameter:parameter_
                                   success:success_
                                    object:object_
+                           responseString:responseString_
                                 otherInfo:otherInfo_];
     
     [self recordRequestFinishCount:1];
@@ -228,6 +231,7 @@ NSString *JJLoginServiceLogOutNotification = @"JJLoginServiceLogOutNotification"
                               parameter:(id)parameter_
                                 success:(BOOL)success_
                                  object:(id)object_
+                         responseString:(NSString *)responseString_
                               otherInfo:(id)otherInfo_
 {
     NSString *notificationName = [NSString stringWithFormat:@"%@_%@", NSStringFromClass([self class]), requestType_];
@@ -237,6 +241,7 @@ NSString *JJLoginServiceLogOutNotification = @"JJLoginServiceLogOutNotification"
     [JJNSMutableDictionaryHelper mDictionary:userInfo setObj:parameter_ forKey:JJServiceNotificationKeyParameter];
     [JJNSMutableDictionaryHelper mDictionary:userInfo setObj:@(success_) forKey:JJServiceNotificationKeySuccess];
     [JJNSMutableDictionaryHelper mDictionary:userInfo setObj:object_ forKey:JJServiceNotificationKeyObject];
+    [JJNSMutableDictionaryHelper mDictionary:userInfo setObj:responseString_ forKey:JJServiceNotificationKeyResponseString];
     [JJNSMutableDictionaryHelper mDictionary:userInfo setObj:otherInfo_ forKey:JJServiceNotificationKeyOtherInfo];
     
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];

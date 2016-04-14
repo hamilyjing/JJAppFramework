@@ -1,9 +1,9 @@
 //
 //  JJBaseRequest.h
-//  YiZhangTong_iOS_CommonLayer
+//  JJ_iOS_CommonLayer
 //
 //  Created by JJ on 12/12/15.
-//  Copyright © 2015 yizhangtong. All rights reserved.
+//  Copyright © 2015 JJ. All rights reserved.
 //
 
 #import "YTKBaseRequest.h"
@@ -22,8 +22,19 @@
 
 @property (nonatomic, copy) id (^operation)(id newObject, id oldObject);
 
-@property (nonatomic, copy) void (^networkSuccessResponse)(id object, id otherInfo);
+@property (nonatomic, copy) void (^networkSuccessResponse)(id object, NSString *responseString, id otherInfo);
 @property (nonatomic, copy) void (^networkFailResponse)(id error, id otherInfo);
+
+@property (nonatomic, strong) NSString *operationType;
+@property (nonatomic, strong) NSDictionary *parameters;
+
+@property (nonatomic, strong) NSDictionary *parametersForSavedFileName;
+
+- (instancetype)initWithOperationType:(NSString *)operationType
+                           parameters:(NSDictionary *)parameters
+                           modelClass:(Class)modelClass
+                       isSaveToMemory:(BOOL)isSaveToMemory
+                         isSaveToDisk:(BOOL)isSaveToDisk;
 
 // get cache
 - (id)cacheModel;

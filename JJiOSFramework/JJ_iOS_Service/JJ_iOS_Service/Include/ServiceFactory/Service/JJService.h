@@ -26,6 +26,7 @@ extern NSString *JJLoginServiceLogOutNotification;
                    requestType:(NSString *)requestType
                      parameter:(id)parameter
                         object:(id)object
+                responseString:(NSString *)responseString
                      otherInfo:(id)otherInfo;
 
 - (void)networkFailResponse:(JJService *)service
@@ -70,14 +71,16 @@ extern NSString *JJLoginServiceLogOutNotification;
                       parameter:(id)parameter
                         success:(BOOL)success
                          object:(id)object
+                 responseString:(NSString *)responseString
                       otherInfo:(id)otherInfo
-         networkSuccessResponse:(void (^)(id object, id otherInfo))networkSuccessResponse
+         networkSuccessResponse:(void (^)(id object, NSString *responseString, id otherInfo))networkSuccessResponse
             networkFailResponse:(void (^)(id error, id otherInfo))networkFailResponse;
 
 - (void)postServiceResponseNotification:(NSString *)requestType
                               parameter:(id)parameter
                                 success:(BOOL)success
                                  object:(id)object
+                         responseString:(NSString *)responseString
                               otherInfo:(id)otherInfo;
 
 - (void)actionAfterLogin;

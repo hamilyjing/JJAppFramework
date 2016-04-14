@@ -1,9 +1,9 @@
 //
 //  JJBaseResponseModel.m
-//  YiZhangTong_iOS_CommonLayer
+//  JJ_iOS_CommonLayer
 //
 //  Created by JJ on 12/16/15.
-//  Copyright © 2015 yizhangtong. All rights reserved.
+//  Copyright © 2015 JJ. All rights reserved.
 //
 
 #import "JJBaseResponseModel.h"
