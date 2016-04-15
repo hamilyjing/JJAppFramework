@@ -1,5 +1,5 @@
 //
-//  JJBaseRequest.h
+//  JJRequest.h
 //  JJ_iOS_CommonLayer
 //
 //  Created by JJ on 12/12/15.
@@ -8,7 +8,7 @@
 
 #import "YTKRequest.h"
 
-@interface JJBaseRequest : YTKRequest
+@interface JJRequest : YTKRequest
 
 @property (nonatomic, assign) YTKRequestMethod requestMethodType;
 

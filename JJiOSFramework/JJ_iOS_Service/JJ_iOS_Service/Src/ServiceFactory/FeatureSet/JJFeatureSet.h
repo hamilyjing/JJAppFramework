@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class JJBaseRequest;
+@class JJRequest;
 @class JJService;
 
 @interface JJFeatureSet : NSObject
@@ -23,24 +23,24 @@
 - (void)featureSetWillUnload;
 - (void)featureSetDidUnload;
 
-- (void)startRequest:(JJBaseRequest *)request
+- (void)startRequest:(JJRequest *)request
          requestType:(NSString *)requestType
            parameter:(id)parameter
            otherInfo:(id)otherInfo
-       successAction:(void (^)(id object, NSString *responseString, JJBaseRequest *request))successAction
-          failAction:(void (^)(NSError *error, JJBaseRequest *request))failAction;
+       successAction:(void (^)(id object, NSString *responseString, JJRequest *request))successAction
+          failAction:(void (^)(NSError *error, JJRequest *request))failAction;
 
-- (void)startRequest:(JJBaseRequest *)request
+- (void)startRequest:(JJRequest *)request
          requestType:(NSString *)requestType
            parameter:(id)parameter
            otherInfo:(id)otherInfo;
 
-- (void)startRequest:(JJBaseRequest *)request
+- (void)startRequest:(JJRequest *)request
            otherInfo:(id)otherInfo
-       successAction:(void (^)(id object, NSString *responseString, JJBaseRequest *request))successAction
-          failAction:(void (^)(NSError *error, JJBaseRequest *request))failAction;
+       successAction:(void (^)(id object, NSString *responseString, JJRequest *request))successAction
+          failAction:(void (^)(NSError *error, JJRequest *request))failAction;
 
-- (void)startRequest:(JJBaseRequest *)request
+- (void)startRequest:(JJRequest *)request
            otherInfo:(id)otherInfo;
 
 - (id)cacheModelWithParameters:(NSDictionary *)parameters

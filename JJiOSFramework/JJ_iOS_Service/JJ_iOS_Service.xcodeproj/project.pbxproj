@@ -28,7 +28,7 @@
 		28BB33BB1C86CB5C00183DE3 /* JJUIDeviceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BB33A11C86CB5C00183DE3 /* JJUIDeviceHelper.m */; };
 		28BB33BC1C86CB5C00183DE3 /* JJLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BB33A41C86CB5C00183DE3 /* JJLocationManager.m */; };
 		28BB33BE1C86CB5C00183DE3 /* JJBaseResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BB33A71C86CB5C00183DE3 /* JJBaseResponseModel.m */; };
-		28BB33BF1C86CB5C00183DE3 /* JJBaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BB33AA1C86CB5C00183DE3 /* JJBaseRequest.m */; };
+		28BB33BF1C86CB5C00183DE3 /* JJRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BB33AA1C86CB5C00183DE3 /* JJRequest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,7 +45,7 @@
 
 /* Begin PBXFileReference section */
 		283C60411CBF400100AF0E51 /* JJServiceLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJServiceLog.h; sourceTree = "<group>"; };
-		283C60421CBF47A900AF0E51 /* JJBaseRequestProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJBaseRequestProtocol.h; sourceTree = "<group>"; };
+		283C60421CBF47A900AF0E51 /* JJRequestProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJRequestProtocol.h; sourceTree = "<group>"; };
 		283C60441CBF638900AF0E51 /* JJTestService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTestService.h; sourceTree = "<group>"; };
 		283C60481CBF63AF00AF0E51 /* JJTestService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJTestService.m; sourceTree = "<group>"; };
 		283C604E1CBF641D00AF0E51 /* JJWeatherModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJWeatherModel.h; sourceTree = "<group>"; };
@@ -89,8 +89,8 @@
 		28BB33A31C86CB5C00183DE3 /* JJLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJLocationManager.h; sourceTree = "<group>"; };
 		28BB33A41C86CB5C00183DE3 /* JJLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJLocationManager.m; sourceTree = "<group>"; };
 		28BB33A71C86CB5C00183DE3 /* JJBaseResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJBaseResponseModel.m; sourceTree = "<group>"; };
-		28BB33A91C86CB5C00183DE3 /* JJBaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJBaseRequest.h; sourceTree = "<group>"; };
-		28BB33AA1C86CB5C00183DE3 /* JJBaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJBaseRequest.m; sourceTree = "<group>"; };
+		28BB33A91C86CB5C00183DE3 /* JJRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJRequest.h; sourceTree = "<group>"; };
+		28BB33AA1C86CB5C00183DE3 /* JJRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJRequest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,7 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				28BB33811C86CB5C00183DE3 /* JJBaseResponseModel.h */,
-				283C60421CBF47A900AF0E51 /* JJBaseRequestProtocol.h */,
+				283C60421CBF47A900AF0E51 /* JJRequestProtocol.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -367,8 +367,8 @@
 		28BB33A81C86CB5C00183DE3 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				28BB33A91C86CB5C00183DE3 /* JJBaseRequest.h */,
-				28BB33AA1C86CB5C00183DE3 /* JJBaseRequest.m */,
+				28BB33A91C86CB5C00183DE3 /* JJRequest.h */,
+				28BB33AA1C86CB5C00183DE3 /* JJRequest.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -443,7 +443,7 @@
 				28BB33BC1C86CB5C00183DE3 /* JJLocationManager.m in Sources */,
 				283C60551CBF649600AF0E51 /* JJWeatherRequest.m in Sources */,
 				28BB33BE1C86CB5C00183DE3 /* JJBaseResponseModel.m in Sources */,
-				28BB33BF1C86CB5C00183DE3 /* JJBaseRequest.m in Sources */,
+				28BB33BF1C86CB5C00183DE3 /* JJRequest.m in Sources */,
 				28BB33AF1C86CB5C00183DE3 /* JJServiceNotification.m in Sources */,
 				283C60491CBF63AF00AF0E51 /* JJTestService.m in Sources */,
 				28BB33B81C86CB5C00183DE3 /* JJNSMutableArrayHelper.m in Sources */,

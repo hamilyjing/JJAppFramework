@@ -1,5 +1,5 @@
 //
-//  JJBaseRequestProtocol.h
+//  JJRequestProtocol.h
 //  JJ_iOS_Service
 //
 //  Created by JJ on 4/14/16.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol JJBaseRequestProtocol <NSObject>
+@protocol JJRequestProtocol <NSObject>
 
 @optional
 

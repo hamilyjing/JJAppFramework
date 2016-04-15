@@ -1,21 +1,21 @@
 
 //
-//  JJBaseRequest.m
+//  JJRequest.m
 //  JJ_iOS_CommonLayer
 //
 //  Created by JJ on 12/12/15.
 //  Copyright © 2015 JJ. All rights reserved.
 //
 
-#import "JJBaseRequest.h"
+#import "JJRequest.h"
 
 #import "YYModel.h"
 #import "JJNSStringHelper.h"
-#import "JJBaseRequestProtocol.h"
+#import "JJRequestProtocol.h"
 #import "JJServiceLog.h"
 #import "JJBaseResponseModel.h"
 
-@interface JJBaseRequest ()
+@interface JJRequest ()
 
 @property (nonatomic, strong) id jjCacheModel;
 
@@ -23,7 +23,7 @@
 
 @end
 
-@implementation JJBaseRequest
+@implementation JJRequest
 
 - (instancetype)initWithOperationType:(NSString *)operationType_
                            parameters:(NSDictionary *)parameters_
@@ -220,7 +220,7 @@
     
     if ([model respondsToSelector:@selector(setData:)])
     {
-        [(id<JJBaseRequestProtocol>)model setData:responseDic];
+        [(id<JJRequestProtocol>)model setData:responseDic];
     }
     
     return model;
@@ -245,7 +245,7 @@
     
     if ([(NSObject *)model_ respondsToSelector:@selector(successForBussiness:)])
     {
-        successForBussiness = [(id<JJBaseRequestProtocol>)model_ successForBussiness:model_];
+        successForBussiness = [(id<JJRequestProtocol>)model_ successForBussiness:model_];
     }
     
     return successForBussiness;
@@ -262,7 +262,7 @@
 - (NSString *)savedFileDirectory
 {
     NSString *cachesDirectory = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    cachesDirectory = [cachesDirectory stringByAppendingPathComponent:@"JJBaseRequest"];
+    cachesDirectory = [cachesDirectory stringByAppendingPathComponent:@"JJRequest"];
     
     if ([self.userCacheDirectory length] > 0)
     {

@@ -8,7 +8,7 @@
 
 #import "JJFeatureSet.h"
 
-#import "JJBaseRequest.h"
+#import "JJRequest.h"
 #import "JJService.h"
 
 @implementation JJFeatureSet
@@ -47,12 +47,12 @@
     
 }
 
-- (void)startRequest:(JJBaseRequest *)request_
+- (void)startRequest:(JJRequest *)request_
          requestType:(NSString *)requestType_
            parameter:(id)parameter_
            otherInfo:(id)otherInfo_
-       successAction:(void (^)(id object, NSString *responseString, JJBaseRequest *request))successAction_
-          failAction:(void (^)(NSError *error, JJBaseRequest *request))failAction_
+       successAction:(void (^)(id object, NSString *responseString, JJRequest *request))successAction_
+          failAction:(void (^)(NSError *error, JJRequest *request))failAction_
 {
     [self.service recordRequestFinishCount:-1];
     
@@ -94,7 +94,7 @@
      }];
 }
 
-- (void)startRequest:(JJBaseRequest *)request_
+- (void)startRequest:(JJRequest *)request_
          requestType:(NSString *)requestType_
            parameter:(id)parameter_
            otherInfo:(id)otherInfo_
@@ -107,20 +107,20 @@
             failAction:nil];
 }
 
-- (void)startRequest:(JJBaseRequest *)request_
+- (void)startRequest:(JJRequest *)request_
            otherInfo:(id)otherInfo_
-       successAction:(void (^)(id object, NSString *responseString, JJBaseRequest *request))successAction_
-          failAction:(void (^)(NSError *error, JJBaseRequest *request))failAction_
+       successAction:(void (^)(id object, NSString *responseString, JJRequest *request))successAction_
+          failAction:(void (^)(NSError *error, JJRequest *request))failAction_
 {
     [self startRequest:request_
            requestType:request_.operationType
              parameter:request_.parameters
              otherInfo:otherInfo_
-         successAction:(void (^)(id object, NSString *responseString, JJBaseRequest *request))successAction_
-            failAction:(void (^)(NSError *error, JJBaseRequest *request))failAction_];
+         successAction:(void (^)(id object, NSString *responseString, JJRequest *request))successAction_
+            failAction:(void (^)(NSError *error, JJRequest *request))failAction_];
 }
 
-- (void)startRequest:(JJBaseRequest *)request_
+- (void)startRequest:(JJRequest *)request_
            otherInfo:(id)otherInfo_
 {
     [self startRequest:request_
@@ -135,7 +135,7 @@
                     modelClass:(Class)modelClass_
                   isSaveToDisk:(BOOL)isSaveToDisk_
 {
-    JJBaseRequest *request = [self _requestWithParameters:parameters_ requestClass:requestClass_ requestType:requestType_ modelClass:modelClass_ isSaveToDisk:isSaveToDisk_];
+    JJRequest *request = [self _requestWithParameters:parameters_ requestClass:requestClass_ requestType:requestType_ modelClass:modelClass_ isSaveToDisk:isSaveToDisk_];
     id model = [request cacheModel];
     return model;
 }
@@ -148,7 +148,7 @@
        networkSuccessResponse:(void(^)(id object, NSString *responseString, id otherinfo))networkSuccessResponse_
           networkFailResponse:(void (^)(NSError *error, id otherinfo))networkFailResponse_
 {
-    JJBaseRequest *request = [self _requestWithParameters:parameters_ requestClass:requestClass_ requestType:requestType_ modelClass:modelClass_ isSaveToDisk:isSaveToDisk_];
+    JJRequest *request = [self _requestWithParameters:parameters_ requestClass:requestClass_ requestType:requestType_ modelClass:modelClass_ isSaveToDisk:isSaveToDisk_];
     request.networkSuccessResponse = networkSuccessResponse_;
     request.networkFailResponse = networkFailResponse_;
     
@@ -167,13 +167,13 @@
 
 #pragma mark - private
 
-- (JJBaseRequest *)_requestWithParameters:(NSDictionary *)parameters_
+- (JJRequest *)_requestWithParameters:(NSDictionary *)parameters_
                                requestClass:(Class)requestClass_
                                 requestType:(NSString *)requestType_
                                  modelClass:(Class)modelClass_
                                isSaveToDisk:(BOOL)isSaveToDisk_
 {
-    JJBaseRequest *request = [[requestClass_ alloc] initWithOperationType:requestType_ parameters:parameters_ modelClass:modelClass_ isSaveToMemory:NO isSaveToDisk:isSaveToDisk_];
+    JJRequest *request = [[requestClass_ alloc] initWithOperationType:requestType_ parameters:parameters_ modelClass:modelClass_ isSaveToMemory:NO isSaveToDisk:isSaveToDisk_];
     return request;
 }
 

@@ -6,8 +6,8 @@
 //  Copyright © 2016 JJ. All rights reserved.
 //
 
-#import "JJBaseRequest.h"
+#import "JJRequest.h"
 
-@interface JJWeatherRequest : JJBaseRequest
+@interface JJWeatherRequest : JJRequest
 
 @end
