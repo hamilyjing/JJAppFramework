@@ -986,7 +986,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "One Module",
+											"text": "First Module",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -1366,11 +1366,11 @@
 											"containerExtending": false,
 											"left": 584,
 											"top": 568,
-											"width": 108,
+											"width": 110,
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "(from One Module)",
+											"text": "(from First Module)",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -1567,11 +1567,11 @@
 											"containerExtending": false,
 											"left": 368,
 											"top": 336,
-											"width": 108,
+											"width": 110,
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "(from One Module)",
+											"text": "(from First Module)",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -1768,11 +1768,11 @@
 											"containerExtending": false,
 											"left": 392,
 											"top": 336,
-											"width": 108,
+											"width": 110,
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "(from One Module)",
+											"text": "(from First Module)",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -3022,7 +3022,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "Credit Card Service",
+											"text": "First Service",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -3415,7 +3415,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "(from Credit Card Service)",
+											"text": "(from First Service)",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -4661,7 +4661,7 @@
 											"containerExtending": false,
 											"left": 93,
 											"top": 174,
-											"width": 97,
+											"width": 100.76611328125,
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
@@ -4730,7 +4730,7 @@
 									"containerExtending": false,
 									"left": 88,
 									"top": 167,
-									"width": 107,
+									"width": 110.76611328125,
 									"height": 25,
 									"autoResize": false,
 									"stereotypeLabel": {
@@ -4761,7 +4761,7 @@
 							"containerExtending": false,
 							"left": 88,
 							"top": 152,
-							"width": 107,
+							"width": 110.76611328125,
 							"height": 40,
 							"autoResize": false,
 							"stereotypeDisplay": "label",
@@ -4791,10 +4791,10 @@
 							"containerExtending": false,
 							"left": 576,
 							"top": 264,
-							"width": 145,
-							"height": 51,
+							"width": 111,
+							"height": 33,
 							"autoResize": false,
-							"text": "1. 隔离视图和业务；2. 处理特别需求",
+							"text": "隔离视图和业务",
 							"wordWrap": true
 						},
 						{
@@ -4819,7 +4819,7 @@
 								"$ref": "AAAAAAFRUz2D1mgxkew="
 							},
 							"lineStyle": 1,
-							"points": "432:279;575:286"
+							"points": "432:277;575:279"
 						},
 						{
 							"_type": "UMLNoteView",
@@ -4935,7 +4935,7 @@
 							"width": 241,
 							"height": 41,
 							"autoResize": false,
-							"text": "通用的工具类，供业务层和视图层使用",
+							"text": "通用的工具类，供服务层和视图层使用",
 							"wordWrap": true
 						},
 						{
@@ -5942,7 +5942,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "(from Credit Card Service)",
+											"text": "(from First Service)",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -6143,7 +6143,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "(from Credit Card Service)",
+											"text": "(from First Service)",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -6344,7 +6344,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "(from Credit Card Service)",
+											"text": "(from First Service)",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -6545,7 +6545,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "(from Credit Card Service)",
+											"text": "(from First Service)",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -6746,7 +6746,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "(from Credit Card Service)",
+											"text": "(from First Service)",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5
 										},
@@ -7092,7 +7092,7 @@
 											"containerExtending": false,
 											"left": 101,
 											"top": 518,
-											"width": 97,
+											"width": 99.0966796875,
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
@@ -7161,7 +7161,7 @@
 									"containerExtending": false,
 									"left": 96,
 									"top": 511,
-									"width": 107,
+									"width": 109.0966796875,
 									"height": 25,
 									"autoResize": false,
 									"stereotypeLabel": {
@@ -7192,7 +7192,7 @@
 							"containerExtending": false,
 							"left": 96,
 							"top": 496,
-							"width": 107,
+							"width": 109.0966796875,
 							"height": 40,
 							"autoResize": false,
 							"stereotypeDisplay": "label",
@@ -7720,7 +7720,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFRUzOw42ackUs="
 							},
-							"name": "One Module",
+							"name": "First Module",
 							"ownedElements": [
 								{
 									"_type": "UMLObject",
@@ -7946,7 +7946,7 @@
 							"_parent": {
 								"$ref": "AAAAAAFRUzNa+GaAwEM="
 							},
-							"name": "Credit Card Service",
+							"name": "First Service",
 							"ownedElements": [
 								{
 									"_type": "UMLObject",
