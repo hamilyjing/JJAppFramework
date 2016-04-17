@@ -8,7 +8,7 @@
 
 ## 框架简介
 
-![image](file:///Users/hamilyjing/Desktop/JJ/Github/JJAppFramework/APP开发框架.png)
+![image](https://mmbiz.qlogo.cn/mmbiz/YTAjOycganMibYRRc0zeYQSywpN6kTvHYeLH01iahUPyxQxf1xTy5mu0V4ibJatzQphSSvM97rBr2k5IgicQgpayAA/0?wx_fmt=png)
 
 框架分三层，由下至上：通用层，服务层，视图层。
 
