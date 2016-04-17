@@ -10,6 +10,8 @@
 
 ![image](file:///Users/hamilyjing/Desktop/JJ/Github/JJAppFramework/APP开发框架.png)
 
+框架分三层，由下至上：通用层，服务层，视图层。
+
 1. 通用层
 
 	通用层包含第三方库和通用工具，这些工具和业务无任何关系，并且可以单独拿出来放到任何工程中。iOS可以使用CocoaPods管理第三方库。
