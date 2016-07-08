@@ -8,6 +8,8 @@
 
 #import "JJServiceFactory.h"
 
+#import <libkern/OSAtomic.h>
+
 #import "JJServiceLog.h"
 #import "JJService.h"
 
@@ -16,6 +18,7 @@ static NSString *JJLogNameServiceFactory = @"[ServiceFactory]";
 @interface JJServiceFactory ()
 
 @property (nonatomic, strong) NSMutableDictionary *serviceContainer;
+@property (nonatomic, assign) OSSpinLock operateLock;
 
 @end
 
@@ -29,6 +32,7 @@ static NSString *JJLogNameServiceFactory = @"[ServiceFactory]";
     static JJServiceFactory *instance;
     dispatch_once(&once, ^{
         instance = [[self alloc] init];
+        instance.operateLock = OS_SPINLOCK_INIT;
     });
     return instance;
 }
@@ -37,11 +41,14 @@ static NSString *JJLogNameServiceFactory = @"[ServiceFactory]";
 {
     NSParameterAssert(serviceName_);
     
+    [self __beginOperateLock];
+    
     JJService *service = self.serviceContainer[serviceName_];
     if (service)
     {
         JJServiceLog(@"%@ get service:%@, \nservice container: \n%@", JJLogNameServiceFactory, serviceName_, self.serviceContainer);
         
+        [self __endOperateLock];
         return service;
     }
     
@@ -53,6 +60,8 @@ static NSString *JJLogNameServiceFactory = @"[ServiceFactory]";
     [service serviceWillLoad];
     self.serviceContainer[serviceName_] = service;
     [service serviceDidLoad];
+    
+    [self __endOperateLock];
     
     return service;
 }
@@ -67,21 +76,36 @@ static NSString *JJLogNameServiceFactory = @"[ServiceFactory]";
 {
     NSParameterAssert(serviceName_);
     
+    [self __beginOperateLock];
+    
     JJServiceLog(@"%@ unload service: %@, force: %d", JJLogNameServiceFactory, serviceName_, isForceUnload_);
     
     JJService *service = self.serviceContainer[serviceName_];
     
     if (!isForceUnload_ && ![service needUnloading])
     {
+        [self __endOperateLock];
         return;
     }
     
     [service serviceWillUnload];
     [self.serviceContainer removeObjectForKey:serviceName_];
     [service serviceDidUnload];
+    
+    [self __endOperateLock];
 }
 
 #pragma mark - private
+
+- (void)__beginOperateLock
+{
+    OSSpinLockLock(&_operateLock);
+}
+
+- (void)__endOperateLock
+{
+    OSSpinLockUnlock(&_operateLock);
+}
 
 - (void)JJ_unloadUnneededService
 {
