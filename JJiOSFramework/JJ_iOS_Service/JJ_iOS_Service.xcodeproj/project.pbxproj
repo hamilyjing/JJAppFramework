@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28061A3B1D2F796C00831C91 /* JJEncryptUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 28061A3A1D2F796C00831C91 /* JJEncryptUtil.m */; };
 		283C60491CBF63AF00AF0E51 /* JJTestService.m in Sources */ = {isa = PBXBuildFile; fileRef = 283C60481CBF63AF00AF0E51 /* JJTestService.m */; };
 		283C60521CBF643A00AF0E51 /* JJWeatherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 283C60511CBF643A00AF0E51 /* JJWeatherModel.m */; };
 		283C60551CBF649600AF0E51 /* JJWeatherRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 283C60541CBF649600AF0E51 /* JJWeatherRequest.m */; };
@@ -44,6 +45,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		28061A391D2F796C00831C91 /* JJEncryptUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJEncryptUtil.h; sourceTree = "<group>"; };
+		28061A3A1D2F796C00831C91 /* JJEncryptUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJEncryptUtil.m; sourceTree = "<group>"; };
 		283C60411CBF400100AF0E51 /* JJServiceLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJServiceLog.h; sourceTree = "<group>"; };
 		283C60421CBF47A900AF0E51 /* JJRequestProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJRequestProtocol.h; sourceTree = "<group>"; };
 		283C60441CBF638900AF0E51 /* JJTestService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJTestService.h; sourceTree = "<group>"; };
@@ -104,6 +107,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28061A381D2F796C00831C91 /* Encryption */ = {
+			isa = PBXGroup;
+			children = (
+				28061A391D2F796C00831C91 /* JJEncryptUtil.h */,
+				28061A3A1D2F796C00831C91 /* JJEncryptUtil.m */,
+			);
+			path = Encryption;
+			sourceTree = "<group>";
+		};
 		283C60401CBF400100AF0E51 /* Log */ = {
 			isa = PBXGroup;
 			children = (
@@ -315,9 +327,10 @@
 		28BB33901C86CB5C00183DE3 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				283C60401CBF400100AF0E51 /* Log */,
+				28061A381D2F796C00831C91 /* Encryption */,
 				28BB33911C86CB5C00183DE3 /* Helper */,
 				28BB33A21C86CB5C00183DE3 /* Location */,
+				283C60401CBF400100AF0E51 /* Log */,
 				28BB33A51C86CB5C00183DE3 /* Model */,
 				28BB33A81C86CB5C00183DE3 /* Network */,
 			);
@@ -434,6 +447,7 @@
 				28BB33BA1C86CB5C00183DE3 /* JJNSStringHelper.m in Sources */,
 				28BB33AE1C86CB5C00183DE3 /* JJFeatureSet.m in Sources */,
 				28BB33B11C86CB5C00183DE3 /* JJServiceBatchRequest.m in Sources */,
+				28061A3B1D2F796C00831C91 /* JJEncryptUtil.m in Sources */,
 				28BB33B71C86CB5C00183DE3 /* JJNSFileManagerHelper.m in Sources */,
 				28BB33BB1C86CB5C00183DE3 /* JJUIDeviceHelper.m in Sources */,
 				283C60581CBF64F300AF0E51 /* JJTestWeatherFeatureSet.m in Sources */,

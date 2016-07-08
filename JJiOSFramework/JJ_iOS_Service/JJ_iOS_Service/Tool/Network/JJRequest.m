@@ -14,6 +14,10 @@
 #import "JJRequestProtocol.h"
 #import "JJServiceLog.h"
 #import "JJBaseResponseModel.h"
+#import "JJEncryptUtil.h"
+
+#define k3DesKey @"(7Bg[#KjbmSegR/#"
+#define k3DesIV @"jj"
 
 @interface JJRequest ()
 
@@ -137,7 +141,11 @@
     }
     
     NSString *filePath = [self savedFilePath];
-    BOOL success = [NSKeyedArchiver archiveRootObject:object_ toFile:filePath];
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:object_];
+    if (data.length > 0) {
+        data = [JJEncryptUtil encryptedWith3DESUsingKey:k3DesKey andIV:k3DesIV source:data];
+    }
+    BOOL success = [data writeToFile:filePath atomically:YES];
     return success;
 }
 
@@ -335,7 +343,12 @@
     NSFileManager *fileManager = [NSFileManager defaultManager];
     if ([fileManager fileExistsAtPath:filePath isDirectory:nil])
     {
-        _jjCacheModel = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath];
+        NSData *data = [[NSFileManager defaultManager] contentsAtPath:filePath];
+        if (data.length > 0)
+        {
+            data = [JJEncryptUtil decryptedWith3DESUsingKey:k3DesKey andIV:k3DesIV source:data];
+            _jjCacheModel = data.length > 0 ? [NSKeyedUnarchiver unarchiveObjectWithData:data] : nil;
+        }
     }
     
     return _jjCacheModel;
