@@ -16,15 +16,7 @@
             <option value="$PROJECT_DIR$/jj_android_ui" />
           </set>
         </option>
-        <option name="myModules">
-          <set>
-            <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/jj_android_common" />
-            <option value="$PROJECT_DIR$/jj_android_service" />
-            <option value="$PROJECT_DIR$/jj_android_ui" />
-          </set>
-        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>
