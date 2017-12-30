@@ -103,18 +103,10 @@
 		283C605B1CBF687600AF0E51 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
-				283C605C1CBF687600AF0E51 /* Model */,
 				283C605D1CBF687600AF0E51 /* Presenter */,
 				283C605E1CBF687600AF0E51 /* View */,
 			);
 			path = Weather;
-			sourceTree = "<group>";
-		};
-		283C605C1CBF687600AF0E51 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		283C605D1CBF687600AF0E51 /* Presenter */ = {
